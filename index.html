@@ -240,7 +240,10 @@ p  { max-width: 65ch; }
   align-items: center;
 }
 @media (min-width: 768px) {
-  .hero-left { padding: 5rem 3.5rem 5rem 3rem; }
+  .hero-left {
+    padding: 5rem 3rem;
+    padding-left: max(3rem, calc((100vw - 1280px) / 2 + 3rem));
+  }
 }
 
 .hero-inner {
@@ -742,6 +745,10 @@ p  { max-width: 65ch; }
         <p>Atendemos a cada paciente sin apuros. Explicamos cada paso del tratamiento para que usted comprenda qué está pasando y se sienta tranquilo en todo momento.</p>
       </div>
     </div>
+    <div style="margin-top:3rem;">
+      <a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer"
+         class="btn btn-primary">Solicite su turno</a>
+    </div>
   </div>
 </section>
 
@@ -788,45 +795,39 @@ p  { max-width: 65ch; }
       </div>
 
       <div class="card">
+        <img class="card-photo"
+             src="https://images.pexels.com/photos/3779703/pexels-photo-3779703.jpeg?auto=compress&w=800&q=90"
+             alt="Endodoncia" loading="lazy">
         <div class="card-body">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 8C16 8 13 13 13 18c0 3 1 6 2 9l2.5 13h5l1-8 1 8h5l2.5-13c1-3 2-6 2-9 0-5-3-10-8-10z"/>
-              <line x1="22" y1="22" x2="22" y2="35"/>
-              <path d="M36 7 L38 9 L29 19 L27 17 Z"/>
-            </svg>
-          </div>
           <h4>Endodoncia</h4>
           <p>Tratamiento de conductos para salvar piezas dentales afectadas. A cargo de la Dra. Núñez.</p>
         </div>
       </div>
 
       <div class="card">
+        <img class="card-photo"
+             src="https://images.pexels.com/photos/3845806/pexels-photo-3845806.jpeg?auto=compress&w=800&q=90"
+             alt="Odontopediatría" loading="lazy">
         <div class="card-body">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
-              <path d="M26 10C21 10 18 14 18 18.5c0 2.5 0.8 5 1.8 8L22 38h8l2.2-11.5c1-3 1.8-5.5 1.8-8C34 14 31 10 26 10z"/>
-              <path d="M21.5 17 C21.5 15 23 13.5 25 14.5 C27 13.5 28.5 15 28.5 17 C28.5 19 25 21.5 25 21.5 C25 21.5 21.5 19 21.5 17 Z"/>
-            </svg>
-          </div>
           <h4>Odontopediatría y ATM</h4>
           <p>Atención odontológica especializada en niños y diagnóstico de trastornos de la articulación temporomandibular.</p>
         </div>
       </div>
 
       <div class="card">
+        <img class="card-photo"
+             src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&w=800&q=90"
+             alt="Cardiología" loading="lazy">
         <div class="card-body">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
-              <path d="M26 40 C26 40 8 28 8 17.5 C8 13 11.5 9 16.5 9 C20 9 23 11 26 14 C29 11 32 9 35.5 9 C40.5 9 44 13 44 17.5 C44 28 26 40 26 40 Z"/>
-              <polyline points="10,26 16,26 19,20 22,32 25,23 28,26 42,26"/>
-            </svg>
-          </div>
           <h4>Cardiología</h4>
           <p>Consultas médicas con la Dra. Carnuccio, especialista en cardiología, en el mismo consultorio.</p>
         </div>
       </div>
 
+    </div>
+    <div style="margin-top:3rem;">
+      <a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer"
+         class="btn btn-primary">Solicite su turno</a>
     </div>
   </div>
 </section>
@@ -904,23 +905,23 @@ p  { max-width: 65ch; }
 
         <ul class="team-list" aria-label="Profesionales del equipo">
           <li class="team-member">
-            <span class="team-member-name">Adriana Lobosco</span>
+            <span class="team-member-name">Dra. Adriana Lobosco</span>
             <span class="team-member-rol">Odontología general, implantología y armonización orofacial. Coordinación del equipo</span>
           </li>
           <li class="team-member">
-            <span class="team-member-name">Dina Rodríguez</span>
+            <span class="team-member-name">Dra. Dina Rodríguez</span>
             <span class="team-member-rol">Especialista en ortodoncia</span>
           </li>
           <li class="team-member">
-            <span class="team-member-name">Carolina Núñez</span>
+            <span class="team-member-name">Dra. Carolina Núñez</span>
             <span class="team-member-rol">Especialista en endodoncia</span>
           </li>
           <li class="team-member">
-            <span class="team-member-name">Laura Szczuczko</span>
+            <span class="team-member-name">Dra. Laura Szczuczko</span>
             <span class="team-member-rol">Odontopediatría y especialista en ATM</span>
           </li>
           <li class="team-member">
-            <span class="team-member-name">Melanie Sánchez</span>
+            <span class="team-member-name">Dra. Melanie Sánchez</span>
             <span class="team-member-rol">Odontología general</span>
           </li>
           <li class="team-member">
@@ -929,6 +930,10 @@ p  { max-width: 65ch; }
           </li>
         </ul>
 
+        <div style="margin-bottom:1.75rem;">
+          <a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer"
+             class="btn btn-primary">Solicite su turno</a>
+        </div>
         <div class="dra-info">
           <p class="dra-name">Dra. Adriana Inés Lobosco</p>
           <p class="dra-mat">M.P. 23.505 · M.N. 26.732</p>
