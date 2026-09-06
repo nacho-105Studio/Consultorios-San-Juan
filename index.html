@@ -317,6 +317,20 @@ p  { max-width: 65ch; }
 @media (min-width: 640px) {
   .pilares-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
 }
+.pilar-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 1.1rem;
+}
+.pilar-icon svg {
+  width: 52px;
+  height: 52px;
+  stroke: var(--color-acento);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .pilar h3 { margin-bottom: 0.75rem; }
 .pilar p  { font-size: 1rem; }
 
@@ -732,22 +746,47 @@ p  { max-width: 65ch; }
       <p>Más de 25 años en Lomas de Zamora, construyendo nuestra historia con el mismo cuidado del primer día.</p>
     </div>
     <div class="pilares-grid">
+
       <div class="pilar">
+        <div class="pilar-icon" aria-hidden="true">
+          <!-- Medalla / trayectoria -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="32" r="12"/>
+            <path d="M17 22 L12 6 L24 13 L36 6 L31 22"/>
+            <path d="M20 32.5 L23 35.5 L29 29"/>
+          </svg>
+        </div>
         <h3>Más de 25 años de trayectoria</h3>
         <p>Desde 1998 en Lomas de Zamora, nuestra trayectoria se mide en pacientes que regresan y nos recomiendan a su familia. La confianza se construye con el tiempo.</p>
       </div>
+
       <div class="pilar">
+        <div class="pilar-icon" aria-hidden="true">
+          <!-- Equipo / personas -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="13" cy="14" r="5"/>
+            <path d="M3 38 C3 31 7.5 27 13 27"/>
+            <circle cx="35" cy="14" r="5"/>
+            <path d="M45 38 C45 31 40.5 27 35 27"/>
+            <circle cx="24" cy="12" r="4.5"/>
+            <path d="M14.5 29 C17 27 20.5 26 24 26 C27.5 26 31 27 33.5 29"/>
+          </svg>
+        </div>
         <h3>Equipo multidisciplinario</h3>
         <p>Seis profesionales especializados en distintas áreas: odontología, ortodoncia, endodoncia, cardiología y más, coordinados en un mismo lugar para una atención integral.</p>
       </div>
+
       <div class="pilar">
+        <div class="pilar-icon" aria-hidden="true">
+          <!-- Atención personalizada: corazón -->
+          <svg viewBox="0 0 48 48">
+            <path d="M24 41 C24 41 5 28 5 16.5 C5 10.5 9.5 6 15.5 6 C19.5 6 22.5 8.5 24 12 C25.5 8.5 28.5 6 32.5 6 C38.5 6 43 10.5 43 16.5 C43 28 24 41 24 41 Z"/>
+          </svg>
+        </div>
         <h3>Atención personalizada</h3>
         <p>Atendemos a cada paciente sin apuros. Explicamos cada paso del tratamiento para que usted comprenda qué está pasando y se sienta tranquilo en todo momento.</p>
       </div>
-    </div>
-    <div style="margin-top:3rem;">
-      <a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer"
-         class="btn btn-primary">Solicite su turno</a>
+
     </div>
   </div>
 </section>
