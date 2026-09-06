@@ -1,0 +1,1056 @@
+<title>Consultorios San Juan</title>
+<meta name="description" content="Consultorios San Juan, Lomas de Zamora. Odontología y medicina desde 2004. Dra. Adriana Lobosco. Turnos por WhatsApp o teléfono.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap">
+
+<style>
+/* ═══════════════════════════════════════════════════
+   VARIABLES
+   ═══════════════════════════════════════════════════ */
+:root {
+  --color-primario:  #1B2E6B;
+  --color-acento:    #2E6EB5;
+  --color-texto:     #1A1F2E;
+  --color-fondo:     #ffffff;
+  --color-fondo-alt: #F0F4FA;
+  --color-borde:     #E2E8F0;
+  --fuente-titulo:   'Poppins', sans-serif;
+  --fuente-cuerpo:   'Lato', sans-serif;
+  --radio-tarjeta:   12px;
+  --radio-boton:     8px;
+  --sombra-tarjeta:  0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+/* ═══════════════════════════════════════════════════
+   RESET
+   ═══════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--fuente-cuerpo);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a   { color: inherit; text-decoration: none; }
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════
+   TIPOGRAFÍA
+   ═══════════════════════════════════════════════════ */
+h1, h2, h3, h4, h5 {
+  font-family: var(--fuente-titulo);
+  color: var(--color-primario);
+  line-height: 1.2;
+  text-wrap: balance;
+  font-weight: 700;
+}
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(2.25rem, 4vw, 2.75rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.4rem); font-weight: 600; }
+h4 { font-size: 1.1rem; font-weight: 700; }
+p  { max-width: 65ch; }
+
+.on-dark h1,
+.on-dark h2,
+.on-dark h3,
+.on-dark h4,
+.on-dark p  { color: #fff; }
+
+/* ═══════════════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════════════ */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+@media (min-width: 768px) {
+  .container { padding: 0 3rem; }
+}
+
+.section { padding: 5rem 0; }
+
+/* ═══════════════════════════════════════════════════
+   BOTONES
+   ═══════════════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.9rem 1.9rem;
+  border-radius: var(--radio-boton);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1;
+  white-space: nowrap;
+}
+.btn:active { opacity: 0.88; }
+
+.btn-primary {
+  background: var(--color-acento);
+  color: #fff;
+  border-color: var(--color-acento);
+}
+.btn-primary:hover { background: var(--color-primario); border-color: var(--color-primario); }
+.hero .btn-primary:hover { background: #fff; color: var(--color-primario); border-color: #fff; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-acento);
+  border-color: var(--color-acento);
+}
+.btn-secondary:hover { background: var(--color-acento); color: #fff; }
+
+.btn-outline-white {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+.btn-outline-white:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* ═══════════════════════════════════════════════════
+   HEADER / NAV
+   ═══════════════════════════════════════════════════ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-fondo);
+  border-bottom: 1px solid var(--color-borde);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  gap: 1.5rem;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.logo-svg { width: 44px; height: 44px; flex-shrink: 0; }
+.logo-text-block { display: flex; flex-direction: column; gap: 1px; }
+.logo-name {
+  font-family: var(--fuente-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  white-space: nowrap;
+  line-height: 1.2;
+}
+.logo-location { font-size: 0.78rem; font-weight: 400; color: var(--color-primario); line-height: 1.2; }
+
+.nav-links {
+  display: none;
+  list-style: none;
+  align-items: center;
+  gap: 0;
+}
+@media (min-width: 900px) { .nav-links { display: flex; } }
+.nav-links a {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radio-boton);
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--color-acento); }
+.nav-links .nav-cta {
+  background: var(--color-acento);
+  color: #fff;
+  margin-left: 0.5rem;
+  padding: 0.5rem 1.1rem;
+}
+.nav-links .nav-cta:hover { background: var(--color-primario); color: #fff; }
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.4rem;
+  background: none;
+  border: none;
+}
+@media (min-width: 900px) { .nav-toggle { display: none; } }
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primario);
+  border-radius: 2px;
+}
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  border-top: 1px solid var(--color-borde);
+  padding: 0.5rem 0 1rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-borde);
+  transition: color 0.15s;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--color-acento); }
+
+/* ═══════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════ */
+.hero {
+  background: var(--color-primario);
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 480px;
+}
+@media (min-width: 768px) {
+  .hero { grid-template-columns: 1fr 1fr; min-height: 640px; }
+}
+
+.hero-left {
+  background: var(--color-primario);
+  padding: 5rem 1.25rem;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .hero-left { padding: 5rem 3.5rem 5rem 3rem; }
+}
+
+.hero-inner {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.hero-left h1    { color: #fff; }
+.hero-sub        { font-size: 1.1rem; font-weight: 400; color: #fff; max-width: 48ch; }
+.hero-address    { font-size: 0.9rem; color: #fff; display: flex; align-items: center; gap: 0.4rem; }
+.hero-actions    { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
+.hero-horarios   { font-size: 0.88rem; color: #fff; max-width: none; line-height: 1.5; }
+
+.hero-right {
+  overflow: hidden;
+  min-height: 280px;
+  background: #25407A;
+}
+@media (min-width: 768px) { .hero-right { min-height: unset; } }
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════
+   STATS
+   ═══════════════════════════════════════════════════ */
+.stats-band { background: var(--color-fondo); }
+.stats-inner {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.stat-item {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  padding: 2.25rem 1.5rem;
+  border-right: 1px solid var(--color-borde);
+}
+.stat-item:last-child { border-right: none; }
+@media (max-width: 540px) {
+  .stat-item { border-right: none; border-bottom: 1px solid var(--color-borde); min-width: 100%; }
+  .stat-item:last-child { border-bottom: none; }
+}
+.stat-value {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-primario);
+  line-height: 1;
+}
+.stat-desc { font-size: 0.95rem; color: var(--color-texto); margin-top: 0.35rem; }
+
+/* ═══════════════════════════════════════════════════
+   POR QUÉ ELEGIRNOS
+   ═══════════════════════════════════════════════════ */
+.pilares-intro    { max-width: 680px; margin-bottom: 3rem; }
+.pilares-intro h2 { margin-bottom: 1rem; }
+.pilares-intro p  { font-size: 1.05rem; }
+
+.pilares-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+@media (min-width: 640px) {
+  .pilares-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+}
+.pilar h3 { margin-bottom: 0.75rem; }
+.pilar p  { font-size: 1rem; }
+
+/* ═══════════════════════════════════════════════════
+   SERVICIOS
+   ═══════════════════════════════════════════════════ */
+.servicios-intro    { max-width: 680px; margin-bottom: 2.5rem; }
+.servicios-intro h2 { margin-bottom: 1rem; }
+.servicios-intro p  { font-size: 1.05rem; }
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 580px) { .servicios-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 880px) { .servicios-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.card {
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-tarjeta);
+  border: 1px solid var(--color-borde);
+  background: var(--color-fondo);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.11); }
+
+.card-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: #C8D9EE;
+}
+.card-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-acento);
+  margin-bottom: 0.5rem;
+}
+.card-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--color-acento);
+  fill: none;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+.card h4 { color: var(--color-primario); }
+.card p  { font-size: 1rem; max-width: none; }
+
+/* ═══════════════════════════════════════════════════
+   GALERÍA
+   ═══════════════════════════════════════════════════ */
+.galeria-titulo    { max-width: 680px; margin-bottom: 2.5rem; }
+.galeria-titulo h2 { margin-bottom: 0; }
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .galeria-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 260px 260px;
+  }
+  .galeria-item:nth-child(1) { grid-column: 1 / 3; }
+  .galeria-item:nth-child(2) { grid-column: 3 / 4; }
+  .galeria-item:nth-child(3) { grid-column: 1 / 2; }
+  .galeria-item:nth-child(4) { grid-column: 2 / 4; }
+}
+.galeria-item {
+  overflow: hidden;
+  border-radius: var(--radio-tarjeta);
+  background: #C8D9EE;
+  min-height: 220px;
+}
+@media (min-width: 640px) { .galeria-item { min-height: unset; } }
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.galeria-item:hover img { transform: scale(1.04); }
+
+/* ═══════════════════════════════════════════════════
+   OBRAS SOCIALES
+   ═══════════════════════════════════════════════════ */
+.obras-intro    { max-width: 680px; margin-bottom: 2.5rem; }
+.obras-intro h2 { margin-bottom: 1rem; }
+.obras-intro p  { font-size: 1.05rem; }
+
+.obras-wrap { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.obra-chip {
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  border: 1.5px solid var(--color-borde);
+  padding: 0.6rem 1.3rem;
+  border-radius: var(--radio-boton);
+  background: var(--color-fondo);
+}
+
+/* ═══════════════════════════════════════════════════
+   EQUIPO
+   ═══════════════════════════════════════════════════ */
+.equipo-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .equipo-layout { grid-template-columns: 1fr 1fr; }
+}
+
+.equipo-photo {
+  overflow: hidden;
+  border-radius: var(--radio-tarjeta);
+  aspect-ratio: 4 / 3;
+  background: #C8D9EE;
+  position: sticky;
+  top: 6rem;
+}
+.equipo-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.equipo-content h2   { margin-bottom: 0.75rem; }
+.equipo-intro-text   { font-size: 1.05rem; margin-bottom: 2rem; }
+
+.team-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.team-member {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+.team-member:first-child { border-top: 1px solid var(--color-borde); }
+.team-member-name {
+  font-family: var(--fuente-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+.team-member-rol { font-size: 0.95rem; color: var(--color-texto); }
+
+.dra-info   { padding-top: 1.75rem; }
+.dra-name {
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  margin-bottom: 0.2rem;
+}
+.dra-mat { font-size: 0.88rem; color: var(--color-texto); }
+
+/* ═══════════════════════════════════════════════════
+   TURNOS
+   ═══════════════════════════════════════════════════ */
+.turnos-intro    { max-width: 680px; margin-bottom: 2.5rem; }
+.turnos-intro h2 { margin-bottom: 1rem; }
+.turnos-intro p  { font-size: 1.05rem; }
+
+.turnos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 560px) { .turnos-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.turno-card {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-tarjeta);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--color-fondo);
+}
+.turno-card.turno-destacado { border: 2px solid var(--color-acento); }
+.turno-card h3  { color: var(--color-primario); }
+.turno-num {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+.turno-card > p { font-size: 1rem; max-width: none; }
+.turno-card .btn { align-self: flex-start; margin-top: 0.5rem; }
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ */
+.site-footer {
+  background: var(--color-primario);
+  color: #fff;
+  padding: 4.5rem 0 2.5rem;
+}
+.footer-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+@media (min-width: 768px) {
+  .footer-layout { grid-template-columns: 2fr 1fr 1fr; }
+}
+.footer-brand-name {
+  font-family: var(--fuente-titulo);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+.footer-dra  { font-size: 1rem; color: #fff; margin-bottom: 0.1rem; }
+.footer-mat  { font-size: 0.85rem; color: #fff; margin-bottom: 1.25rem; }
+.footer-addr {
+  font-size: 0.95rem;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  transition: opacity 0.15s;
+}
+.footer-addr:hover { opacity: 0.8; }
+.footer-credit {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #fff;
+  margin-left: 0.25rem;
+}
+.footer-credit a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+.footer-col h5 {
+  font-family: var(--fuente-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.footer-col ul  { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.footer-col li  { font-size: 0.95rem; }
+.footer-col a   { color: #fff; transition: opacity 0.15s; }
+.footer-col a:hover { opacity: 0.8; }
+.footer-todo    { color: #fff; font-style: italic; opacity: 0.5; }
+.footer-bottom {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.85rem;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon { display: inline-block; vertical-align: -3px; flex-shrink: 0; }
+</style>
+
+<!-- HEADER ──────────────────────────────────────── -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+
+      <a href="#inicio" class="nav-logo" aria-label="Consultorios San Juan">
+        <!-- TODO: REEMPLAZAR ESTE SVG CON EL LOGO PNG DEL CLIENTE -->
+        <svg class="logo-svg" viewBox="0 0 44 44" fill="none"
+             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="15" y="2"  width="14" height="40" rx="3" fill="#1B2E6B"/>
+          <rect x="2"  y="15" width="40" height="14" rx="3" fill="#1B2E6B"/>
+          <text x="22" y="26.5" text-anchor="middle"
+                font-family="Georgia,serif" font-size="13" font-weight="700"
+                fill="white">S</text>
+        </svg>
+        <div class="logo-text-block">
+          <span class="logo-name">Consultorios San Juan</span>
+          <span class="logo-location">Lomas de Zamora</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" role="list" aria-label="Navegación principal">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#obras-sociales">Obras sociales</a></li>
+        <li><a href="#turnos">Turnos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li>
+          <a href="https://wa.me/541136622223"
+             target="_blank" rel="noopener noreferrer"
+             class="nav-cta">Solicite su turno</a>
+        </li>
+      </ul>
+
+      <button class="nav-toggle"
+              aria-label="Abrir menú"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Menú móvil">
+      <a href="#inicio"         onclick="closeMenu()">Inicio</a>
+      <a href="#nosotros"       onclick="closeMenu()">Nosotros</a>
+      <a href="#servicios"      onclick="closeMenu()">Servicios</a>
+      <a href="#obras-sociales" onclick="closeMenu()">Obras sociales</a>
+      <a href="#turnos"         onclick="closeMenu()">Turnos</a>
+      <a href="#contacto"       onclick="closeMenu()">Contacto</a>
+      <a href="https://wa.me/541136622223"
+         target="_blank" rel="noopener noreferrer"
+         onclick="closeMenu()"
+         style="color:var(--color-acento); font-weight:700;">
+        Solicite su turno por WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO ───────────────────────────────────────── -->
+<section class="hero on-dark" id="inicio" aria-labelledby="hero-heading">
+
+  <div class="hero-left">
+    <div class="hero-inner">
+      <h1 id="hero-heading">Tu salud está en buenas manos</h1>
+      <p class="hero-sub">
+        Consultorios San Juan es un espacio de calidez y dedicación, donde cada paciente es acompañado en su tratamiento con atención personalizada.
+      </p>
+      <a class="hero-address"
+         href="https://www.google.com/maps/search/?api=1&query=Oslo+96%2C+Lomas+de+Zamora%2C+Buenos+Aires"
+         target="_blank" rel="noopener noreferrer">
+        <svg class="icon" width="14" height="14" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 21s-8-7.5-8-12a8 8 0 0 1 16 0c0 4.5-8 12-8 12z"/>
+          <circle cx="12" cy="9" r="3"/>
+        </svg>
+        Oslo 96, Lomas de Zamora, Buenos Aires
+      </a>
+      <div class="hero-actions">
+        <a href="https://wa.me/541136622223"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-primary">Solicite su turno</a>
+        <a href="tel:0114283300" class="btn btn-outline-white">Llamanos</a>
+      </div>
+      <p class="hero-horarios">
+        <!-- TODO: COMPLETAR HORARIOS DE ATENCIÓN -->
+        Lunes a viernes: COMPLETAR HORARIO&ensp;·&ensp;Sábados: COMPLETAR HORARIO
+      </p>
+    </div>
+  </div>
+
+  <div class="hero-right" aria-hidden="true">
+    <img src="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&w=1280&q=90" alt="">
+  </div>
+
+</section>
+
+<!-- STATS ──────────────────────────────────────── -->
+<div class="stats-band" style="border-bottom: 1px solid var(--color-borde);" aria-label="Resumen del consultorio">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value">+25</div>
+      <div class="stat-desc">años de trayectoria</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">6</div>
+      <div class="stat-desc">profesionales</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">+10</div>
+      <div class="stat-desc">obras sociales</div>
+    </div>
+  </div>
+</div>
+
+<!-- POR QUÉ ELEGIRNOS ──────────────────────────── -->
+<section class="section" id="nosotros"
+         style="background: var(--color-fondo-alt);"
+         aria-labelledby="nosotros-heading">
+  <div class="container">
+    <div class="pilares-intro">
+      <h2 id="nosotros-heading">Por qué elegirnos</h2>
+      <p>Más de 25 años en Lomas de Zamora, construyendo nuestra historia con el mismo cuidado del primer día.</p>
+    </div>
+    <div class="pilares-grid">
+      <div class="pilar">
+        <h3>Más de 25 años de trayectoria</h3>
+        <p>Desde 1998 en Lomas de Zamora, nuestra trayectoria se mide en pacientes que regresan y nos recomiendan a su familia. La confianza se construye con el tiempo.</p>
+      </div>
+      <div class="pilar">
+        <h3>Equipo multidisciplinario</h3>
+        <p>Seis profesionales especializados en distintas áreas: odontología, ortodoncia, endodoncia, cardiología y más, coordinados en un mismo lugar para una atención integral.</p>
+      </div>
+      <div class="pilar">
+        <h3>Atención personalizada</h3>
+        <p>Atendemos a cada paciente sin apuros. Explicamos cada paso del tratamiento para que usted comprenda qué está pasando y se sienta tranquilo en todo momento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS ──────────────────────────────────── -->
+<section class="section" id="servicios"
+         style="background: var(--color-fondo);"
+         aria-labelledby="servicios-heading">
+  <div class="container">
+    <div class="servicios-intro">
+      <h2 id="servicios-heading">Nuestros servicios</h2>
+      <p>Nuestro fuerte es la odontología. Hoy también ofrecemos otras especialidades médicas en el mismo consultorio.</p>
+    </div>
+
+    <div class="servicios-grid">
+
+      <div class="card">
+        <img class="card-photo"
+             src="https://images.pexels.com/photos/3779696/pexels-photo-3779696.jpeg?auto=compress&w=800&q=90"
+             alt="Odontología general" loading="lazy">
+        <div class="card-body">
+          <h4>Odontología general</h4>
+          <p>Consultas, diagnóstico y tratamientos para toda la familia. Primera visita y seguimiento continuo.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-photo"
+             src="https://images.pexels.com/photos/6529115/pexels-photo-6529115.jpeg?auto=compress&w=800&q=90"
+             alt="Ortodoncia" loading="lazy">
+        <div class="card-body">
+          <h4>Ortodoncia</h4>
+          <p>Brackets y alineadores para corregir la posición dental en niños y adultos. A cargo de la Dra. Rodríguez.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-photo"
+             src="https://images.pexels.com/photos/6627519/pexels-photo-6627519.jpeg?auto=compress&w=800&q=90"
+             alt="Estética dental" loading="lazy">
+        <div class="card-body">
+          <h4>Estética dental</h4>
+          <p>Blanqueamiento, carillas, armonización orofacial y restauraciones para una sonrisa que lo represente.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 8C16 8 13 13 13 18c0 3 1 6 2 9l2.5 13h5l1-8 1 8h5l2.5-13c1-3 2-6 2-9 0-5-3-10-8-10z"/>
+              <line x1="22" y1="22" x2="22" y2="35"/>
+              <path d="M36 7 L38 9 L29 19 L27 17 Z"/>
+            </svg>
+          </div>
+          <h4>Endodoncia</h4>
+          <p>Tratamiento de conductos para salvar piezas dentales afectadas. A cargo de la Dra. Núñez.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+              <path d="M26 10C21 10 18 14 18 18.5c0 2.5 0.8 5 1.8 8L22 38h8l2.2-11.5c1-3 1.8-5.5 1.8-8C34 14 31 10 26 10z"/>
+              <path d="M21.5 17 C21.5 15 23 13.5 25 14.5 C27 13.5 28.5 15 28.5 17 C28.5 19 25 21.5 25 21.5 C25 21.5 21.5 19 21.5 17 Z"/>
+            </svg>
+          </div>
+          <h4>Odontopediatría y ATM</h4>
+          <p>Atención odontológica especializada en niños y diagnóstico de trastornos de la articulación temporomandibular.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+              <path d="M26 40 C26 40 8 28 8 17.5 C8 13 11.5 9 16.5 9 C20 9 23 11 26 14 C29 11 32 9 35.5 9 C40.5 9 44 13 44 17.5 C44 28 26 40 26 40 Z"/>
+              <polyline points="10,26 16,26 19,20 22,32 25,23 28,26 42,26"/>
+            </svg>
+          </div>
+          <h4>Cardiología</h4>
+          <p>Consultas médicas con la Dra. Carnuccio, especialista en cardiología, en el mismo consultorio.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NUESTRO CONSULTORIO ─────────────────────────── -->
+<section class="section" id="consultorio"
+         style="background: var(--color-fondo-alt);"
+         aria-labelledby="galeria-heading">
+  <div class="container">
+    <div class="galeria-titulo">
+      <h2 id="galeria-heading">Nuestro consultorio</h2>
+    </div>
+    <div class="galeria-grid" aria-label="Fotos del consultorio">
+      <div class="galeria-item">
+        <img src="https://images.pexels.com/photos/3779706/pexels-photo-3779706.jpeg?auto=compress&w=1000&q=90"
+             alt="Consultorios San Juan — vista general" loading="lazy">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.pexels.com/photos/3952125/pexels-photo-3952125.jpeg?auto=compress&w=1000&q=90"
+             alt="Consultorios San Juan — sala de atención" loading="lazy">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.pexels.com/photos/3845807/pexels-photo-3845807.jpeg?auto=compress&w=1000&q=90"
+             alt="Consultorios San Juan — equipamiento" loading="lazy">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.pexels.com/photos/3881292/pexels-photo-3881292.jpeg?auto=compress&w=1000&q=90"
+             alt="Consultorios San Juan — recepción" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBRAS SOCIALES ─────────────────────────────── -->
+<section class="section" id="obras-sociales"
+         style="background: var(--color-fondo);"
+         aria-labelledby="obras-heading">
+  <div class="container">
+    <div class="obras-intro">
+      <h2 id="obras-heading">Trabajamos con las principales obras sociales</h2>
+      <p>Consúltenos si su cobertura está incluida. Estamos para ayudarle a aprovechar al máximo su plan de salud.</p>
+    </div>
+    <div class="obras-wrap" role="list" aria-label="Obras sociales aceptadas">
+      <span class="obra-chip" role="listitem">IOMA</span>
+      <span class="obra-chip" role="listitem">OSDE</span>
+      <span class="obra-chip" role="listitem">Swiss Medical</span>
+      <span class="obra-chip" role="listitem">PAMI</span>
+      <span class="obra-chip" role="listitem">Galeno</span>
+      <span class="obra-chip" role="listitem">Medicus</span>
+      <span class="obra-chip" role="listitem">Accord Salud</span>
+      <span class="obra-chip" role="listitem">OSECAC</span>
+      <span class="obra-chip" role="listitem">OSPAT</span>
+      <span class="obra-chip" role="listitem">Federada Salud</span>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO ─────────────────────────────────────── -->
+<section class="section" id="equipo"
+         style="background: var(--color-fondo-alt);"
+         aria-labelledby="equipo-heading">
+  <div class="container">
+    <div class="equipo-layout">
+
+      <div class="equipo-photo">
+        <img src="https://images.pexels.com/photos/3952136/pexels-photo-3952136.jpeg?auto=compress&w=1280&q=90"
+             alt="Equipo de Consultorios San Juan" loading="lazy">
+      </div>
+
+      <div class="equipo-content">
+        <h2 id="equipo-heading">El equipo</h2>
+        <p class="equipo-intro-text">
+          Un grupo de profesionales con distintas especialidades que trabajan de forma coordinada para acompañarle en cada etapa de su tratamiento.
+        </p>
+
+        <ul class="team-list" aria-label="Profesionales del equipo">
+          <li class="team-member">
+            <span class="team-member-name">Adriana Lobosco</span>
+            <span class="team-member-rol">Odontología general, implantología y armonización orofacial. Coordinación del equipo</span>
+          </li>
+          <li class="team-member">
+            <span class="team-member-name">Dina Rodríguez</span>
+            <span class="team-member-rol">Especialista en ortodoncia</span>
+          </li>
+          <li class="team-member">
+            <span class="team-member-name">Carolina Núñez</span>
+            <span class="team-member-rol">Especialista en endodoncia</span>
+          </li>
+          <li class="team-member">
+            <span class="team-member-name">Laura Szczuczko</span>
+            <span class="team-member-rol">Odontopediatría y especialista en ATM</span>
+          </li>
+          <li class="team-member">
+            <span class="team-member-name">Melanie Sánchez</span>
+            <span class="team-member-rol">Odontología general</span>
+          </li>
+          <li class="team-member">
+            <span class="team-member-name">Dra. María Teresa Carnuccio</span>
+            <span class="team-member-rol">Médica especialista en cardiología</span>
+          </li>
+        </ul>
+
+        <div class="dra-info">
+          <p class="dra-name">Dra. Adriana Inés Lobosco</p>
+          <p class="dra-mat">M.P. 23.505 · M.N. 26.732</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TURNOS ─────────────────────────────────────── -->
+<section class="section" id="turnos"
+         style="background: var(--color-fondo);"
+         aria-labelledby="turnos-heading">
+  <div class="container">
+    <div class="turnos-intro">
+      <h2 id="turnos-heading">Sacar un turno es muy sencillo</h2>
+      <p>Elija la opción que le resulte más cómoda. Respondemos a la brevedad en el horario de atención.</p>
+    </div>
+    <div class="turnos-grid">
+
+      <div class="turno-card turno-destacado">
+        <h3>Por WhatsApp</h3>
+        <p class="turno-num">11&nbsp;3662-2223</p>
+        <p>Escríbanos y coordinamos su turno de forma rápida y directa.</p>
+        <a href="https://wa.me/541136622223"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-primary">Escribinos ahora</a>
+      </div>
+
+      <div class="turno-card">
+        <h3>Por teléfono</h3>
+        <p class="turno-num">4283-3005</p>
+        <p>
+          Llámenos durante el horario de atención y le asignamos el turno que mejor le convenga.
+          <!-- TODO: AGREGAR HORARIO DE ATENCIÓN TELEFÓNICA -->
+        </p>
+        <a href="tel:0114283300" class="btn btn-secondary">Llamar al consultorio</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER ─────────────────────────────────────── -->
+<footer class="site-footer on-dark" id="contacto" role="contentinfo">
+  <div class="container">
+    <div class="footer-layout">
+
+      <div class="footer-brand">
+        <p class="footer-brand-name">
+          Consultorios San Juan
+          <span class="footer-credit">· Diseño web: <a href="https://105.studio" target="_blank" rel="noopener noreferrer">105.studio</a></span>
+        </p>
+        <p class="footer-dra">Dra. Adriana Inés Lobosco</p>
+        <p class="footer-mat">M.P. 23.505 · M.N. 26.732</p>
+        <a class="footer-addr"
+           href="https://www.google.com/maps/search/?api=1&query=Oslo+96%2C+Lomas+de+Zamora%2C+Buenos+Aires"
+           target="_blank" rel="noopener noreferrer">
+          <svg class="icon" width="13" height="13" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 21s-8-7.5-8-12a8 8 0 0 1 16 0c0 4.5-8 12-8 12z"/>
+            <circle cx="12" cy="9" r="3"/>
+          </svg>
+          Oslo 96, Lomas de Zamora, Buenos Aires
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="tel:0114283300">Tel: 4283-3005</a></li>
+          <li>
+            <a href="https://wa.me/541136622223"
+               target="_blank" rel="noopener noreferrer">
+              WhatsApp: 11&nbsp;3662-2223
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/sanjuan.consultorios"
+               target="_blank" rel="noopener noreferrer">
+              @sanjuan.consultorios
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Horarios</h5>
+        <ul>
+          <!-- TODO: COMPLETAR CON LOS HORARIOS DE ATENCIÓN REALES -->
+          <li class="footer-todo">COMPLETAR HORARIOS</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="footer-bottom">© 2026 Consultorios San Juan. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  function toggleMenu(btn) {
+    var menu = document.getElementById('mobile-menu');
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  }
+  function closeMenu() {
+    var menu   = document.getElementById('mobile-menu');
+    var toggle = document.querySelector('.nav-toggle');
+    menu.classList.remove('open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  }
+  document.addEventListener('click', function (e) {
+    var menu   = document.getElementById('mobile-menu');
+    var toggle = document.querySelector('.nav-toggle');
+    if (!menu || !toggle) return;
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+  });
+  window.toggleMenu = toggleMenu;
+  window.closeMenu  = closeMenu;
+}());
+</script>
