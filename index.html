@@ -566,7 +566,26 @@ p  { max-width: 65ch; text-wrap: pretty; }
   font-weight: 700;
   color: var(--color-primario);
 }
-.team-member-rol { font-size: 0.95rem; color: var(--color-texto); text-wrap: pretty; }
+.team-member-specialty {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-acento);
+  margin-top: 0.1rem;
+}
+.team-member-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+.team-member-tag {
+  font-size: 0.8rem;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
 
 .dra-info   { padding-top: 1.75rem; }
 .dra-name {
@@ -1065,31 +1084,65 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <ul class="team-list" aria-label="Profesionales del equipo">
           <li class="team-member">
             <span class="team-member-name">Dra. Adriana Lobosco</span>
-            <span class="team-member-rol">Odontología Clínica · Armonización orofacial, prótesis removibles y fijas, prótesis estéticas y carillas. Coordinación del equipo</span>
+            <span class="team-member-specialty">Odontología Clínica</span>
+            <div class="team-member-tags">
+              <span class="team-member-tag">Armonización orofacial</span>
+              <span class="team-member-tag">Prótesis removibles y fijas</span>
+              <span class="team-member-tag">Carillas</span>
+              <span class="team-member-tag">Coordinación del equipo</span>
+            </div>
           </li>
           <li class="team-member">
             <span class="team-member-name">Dra. Dina Rodríguez</span>
-            <span class="team-member-rol">Ortodoncia y Ortopedia · Aparatos removibles para niños, brackets metálicos y estéticos, alineadores invisibles</span>
+            <span class="team-member-specialty">Ortodoncia y Ortopedia</span>
+            <div class="team-member-tags">
+              <span class="team-member-tag">Aparatos removibles para niños</span>
+              <span class="team-member-tag">Brackets metálicos y estéticos</span>
+              <span class="team-member-tag">Alineadores invisibles</span>
+            </div>
           </li>
           <li class="team-member">
             <span class="team-member-name">Dra. Carolina Núñez</span>
-            <span class="team-member-rol">Endodoncia · Tratamiento de conducto</span>
+            <span class="team-member-specialty">Endodoncia</span>
+            <div class="team-member-tags">
+              <span class="team-member-tag">Tratamiento de conducto</span>
+            </div>
           </li>
           <li class="team-member">
             <span class="team-member-name">Dra. Laura Szczuczko</span>
-            <span class="team-member-rol">Odontopediatría · Atención a niños, ortopedia de los maxilares, atención de disfunción ATM</span>
+            <span class="team-member-specialty">Odontopediatría</span>
+            <div class="team-member-tags">
+              <span class="team-member-tag">Atención a niños</span>
+              <span class="team-member-tag">Ortopedia de los maxilares</span>
+              <span class="team-member-tag">Disfunción ATM</span>
+            </div>
           </li>
           <li class="team-member">
             <span class="team-member-name">Dra. Melanie Sánchez</span>
-            <span class="team-member-rol">Odontología Clínica · Restauraciones, extracciones, limpieza dental, blanqueamiento</span>
+            <span class="team-member-specialty">Odontología Clínica</span>
+            <div class="team-member-tags">
+              <span class="team-member-tag">Restauraciones</span>
+              <span class="team-member-tag">Extracciones</span>
+              <span class="team-member-tag">Limpieza dental</span>
+              <span class="team-member-tag">Blanqueamiento</span>
+            </div>
           </li>
           <li class="team-member">
             <span class="team-member-name">Dra. María Teresa Carnuccio</span>
-            <span class="team-member-rol">Cardiología · Controles clínicos y cardiológicos preventivos, electrocardiogramas y seguimiento de riesgo cardiovascular, evaluaciones prequirúrgicas y control de hipertensión</span>
+            <span class="team-member-specialty">Cardiología</span>
+            <div class="team-member-tags">
+              <span class="team-member-tag">Controles clínicos y cardiológicos</span>
+              <span class="team-member-tag">Electrocardiogramas</span>
+              <span class="team-member-tag">Evaluaciones prequirúrgicas</span>
+            </div>
           </li>
           <li class="team-member">
             <span class="team-member-name">Aux. Paola Teles</span>
-            <span class="team-member-rol">Auxiliar en Odontología · Recepción de pacientes y asistencia al profesional</span>
+            <span class="team-member-specialty">Auxiliar en Odontología</span>
+            <div class="team-member-tags">
+              <span class="team-member-tag">Recepción de pacientes</span>
+              <span class="team-member-tag">Asistencia al profesional</span>
+            </div>
           </li>
         </ul>
 
