@@ -641,6 +641,32 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 }
 .obras-ver-mas:hover { opacity: 0.75; }
 
+/* ═══════════════════════════════════════════════════
+   ANIMACIONES DE ENTRADA
+   ═══════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .hero-inner {
+    animation: fadeUp 0.65s ease-out both;
+    animation-delay: 0.1s;
+  }
+
+  .anim {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    transition-delay: var(--ad, 0ms);
+  }
+  .anim.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 </style>
 
 </head>
@@ -743,13 +769,13 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
          style="background: var(--color-fondo-alt);"
          aria-labelledby="nosotros-heading">
   <div class="container">
-    <div class="pilares-intro">
+    <div class="pilares-intro anim">
       <h2 id="nosotros-heading">Por qué elegirnos</h2>
       <p>Somos más que una consulta odontológica. Integramos lo biológico, lo emocional y lo preventivo, y llevamos más de 20 años construyendo esa confianza en Lomas de Zamora.</p>
     </div>
     <div class="pilares-grid">
 
-      <div class="pilar">
+      <div class="pilar anim" style="--ad:0ms">
         <div class="pilar-icon" aria-hidden="true">
           <!-- Medalla / trayectoria -->
           <svg viewBox="0 0 48 48">
@@ -762,7 +788,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
         <p>Desde 2005 en Lomas de Zamora, nuestra trayectoria se mide en pacientes que regresan y nos recomiendan a su familia. La confianza se construye con el tiempo.</p>
       </div>
 
-      <div class="pilar">
+      <div class="pilar anim" style="--ad:120ms">
         <div class="pilar-icon" aria-hidden="true">
           <!-- Equipo / personas -->
           <svg viewBox="0 0 48 48">
@@ -778,7 +804,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
         <p>Seis profesionales especializados en distintas áreas: odontología, ortodoncia, endodoncia, cardiología y más, coordinados en un mismo lugar para una atención integral.</p>
       </div>
 
-      <div class="pilar">
+      <div class="pilar anim" style="--ad:240ms">
         <div class="pilar-icon" aria-hidden="true">
           <!-- Atención personalizada: corazón -->
           <svg viewBox="0 0 48 48">
@@ -798,14 +824,14 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
          style="background: var(--color-fondo);"
          aria-labelledby="servicios-heading">
   <div class="container">
-    <div class="servicios-intro">
+    <div class="servicios-intro anim">
       <h2 id="servicios-heading">Nuestros servicios</h2>
       <p>Nuestro fuerte es la odontología. Hoy también ofrecemos otras especialidades médicas en el mismo consultorio.</p>
     </div>
 
     <div class="servicios-grid">
 
-      <a class="card" href="/servicios.html#odontologia">
+      <a class="card anim" style="--ad:0ms" href="/servicios.html#odontologia">
         <img class="card-photo"
              src="https://images.pexels.com/photos/3779696/pexels-photo-3779696.jpeg?auto=compress&w=800&q=90"
              alt="Odontología general" loading="lazy">
@@ -815,7 +841,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
         </div>
       </a>
 
-      <a class="card" href="/servicios.html#ortodoncia">
+      <a class="card anim" style="--ad:80ms" href="/servicios.html#ortodoncia">
         <img class="card-photo"
              src="https://images.pexels.com/photos/6529115/pexels-photo-6529115.jpeg?auto=compress&w=800&q=90"
              alt="Ortodoncia" loading="lazy">
@@ -825,7 +851,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
         </div>
       </a>
 
-      <a class="card" href="/servicios.html#estetica">
+      <a class="card anim" style="--ad:160ms" href="/servicios.html#estetica">
         <img class="card-photo"
              src="https://images.pexels.com/photos/6627519/pexels-photo-6627519.jpeg?auto=compress&w=800&q=90"
              alt="Estética dental" loading="lazy">
@@ -835,7 +861,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
         </div>
       </a>
 
-      <a class="card" href="/servicios.html#endodoncia">
+      <a class="card anim" style="--ad:0ms" href="/servicios.html#endodoncia">
         <img class="card-photo"
              src="https://images.pexels.com/photos/3779703/pexels-photo-3779703.jpeg?auto=compress&w=800&q=90"
              alt="Endodoncia" loading="lazy">
@@ -845,7 +871,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
         </div>
       </a>
 
-      <a class="card" href="/servicios.html#odontopediatria">
+      <a class="card anim" style="--ad:80ms" href="/servicios.html#odontopediatria">
         <img class="card-photo"
              src="https://images.pexels.com/photos/3845806/pexels-photo-3845806.jpeg?auto=compress&w=800&q=90"
              alt="Odontopediatría" loading="lazy">
@@ -855,7 +881,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
         </div>
       </a>
 
-      <a class="card" href="/servicios.html#cardiologia">
+      <a class="card anim" style="--ad:160ms" href="/servicios.html#cardiologia">
         <img class="card-photo"
              src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&w=800&q=90"
              alt="Cardiología" loading="lazy">
@@ -881,12 +907,12 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
   <div class="container">
     <div class="equipo-layout">
 
-      <div class="equipo-photo">
+      <div class="equipo-photo anim" style="--ad:0ms">
         <img src="https://images.pexels.com/photos/3952136/pexels-photo-3952136.jpeg?auto=compress&w=1280&q=90"
              alt="Equipo de Consultorios San Juan" loading="lazy">
       </div>
 
-      <div class="equipo-content">
+      <div class="equipo-content anim" style="--ad:150ms">
         <h2 id="equipo-heading">El equipo</h2>
         <p class="equipo-intro-text">
           Un grupo de profesionales con distintas especialidades que trabajan de forma coordinada para acompañarle en cada etapa de su tratamiento.
@@ -960,7 +986,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 <!-- OBRAS SOCIALES ── discreta ─────────────────── -->
 <div id="obras-sociales" class="obras-banda" style="background: var(--color-fondo);">
   <div class="container">
-    <div class="obras-banda-inner">
+    <div class="obras-banda-inner anim">
       <div class="obras-banda-left">
         <p class="obras-banda-label">Obras sociales y prepagas</p>
         <div class="obras-chips-row">
@@ -980,13 +1006,13 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
          style="background: var(--color-fondo-alt);"
          aria-labelledby="turnos-heading">
   <div class="container">
-    <div class="turnos-intro">
+    <div class="turnos-intro anim">
       <h2 id="turnos-heading">Sacar un turno es muy sencillo</h2>
       <p>Elija la opción que le resulte más cómoda. Respondemos a la brevedad en el horario de atención.</p>
     </div>
     <div class="turnos-grid">
 
-      <div class="turno-card turno-destacado">
+      <div class="turno-card turno-destacado anim" style="--ad:0ms">
         <h3>Por WhatsApp</h3>
         <p class="turno-num">11&nbsp;3662-2223</p>
         <p>Escríbanos y coordinamos su turno de forma rápida y directa.</p>
@@ -995,7 +1021,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
            class="btn btn-primary">Escríbanos ahora</a>
       </div>
 
-      <div class="turno-card">
+      <div class="turno-card anim" style="--ad:130ms">
         <h3>Por teléfono</h3>
         <p class="turno-num">4283-3005</p>
         <p>Llámenos en horario de atención y le asignamos el turno que mejor le convenga.</p>
@@ -1089,6 +1115,22 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
   });
   window.toggleMenu = toggleMenu;
   window.closeMenu  = closeMenu;
+}());
+
+(function () {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.anim').forEach(function (el) { el.classList.add('visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.anim').forEach(function (el) { observer.observe(el); });
 }());
 </script>
 
