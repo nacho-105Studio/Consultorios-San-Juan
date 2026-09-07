@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Consultorios San Juan</title>
-<meta name="description" content="Consultorios San Juan, Lomas de Zamora. Odontología y medicina desde 2004. Dra. Adriana Lobosco. Turnos por WhatsApp o teléfono.">
+<meta name="description" content="Consultorios San Juan, Lomas de Zamora. Odontología y medicina desde 2005. Dra. Adriana Lobosco. Turnos por WhatsApp o teléfono.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -183,7 +183,9 @@ p  { max-width: 65ch; text-wrap: pretty; }
   border-radius: var(--radio-boton);
   transition: color 0.15s;
 }
-.nav-links a:hover { color: var(--color-acento); }
+.nav-links a:hover  { color: var(--color-acento); }
+.nav-links a.nav-active { color: var(--color-acento); }
+.mobile-menu a.nav-active { color: var(--color-acento); }
 .nav-links .nav-cta {
   background: var(--color-acento);
   color: #fff;
@@ -324,6 +326,32 @@ p  { max-width: 65ch; text-wrap: pretty; }
   color: var(--color-texto);
   margin-top: 0.35rem;
 }
+
+/* ═══════════════════════════════════════════════════
+   FILOSOFÍA
+   ═══════════════════════════════════════════════════ */
+.filosofia-intro    { max-width: 680px; margin-bottom: 2.5rem; }
+.filosofia-intro h2 { margin-bottom: 1rem; }
+.filosofia-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  .filosofia-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+}
+.filosofia-card {
+  background: var(--color-fondo-alt);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.filosofia-emoji { font-size: 1.75rem; line-height: 1; }
+.filosofia-card h3 { font-size: 1.1rem; }
+.filosofia-card p  { font-size: 1rem; max-width: none; }
 
 /* ═══════════════════════════════════════════════════
    POR QUÉ ELEGIRNOS
@@ -780,12 +808,11 @@ p  { max-width: 65ch; text-wrap: pretty; }
       </a>
 
       <ul class="nav-links" role="list" aria-label="Navegación principal">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#obras-sociales">Obras sociales</a></li>
-        <li><a href="#turnos">Turnos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="/" class="nav-active">Inicio</a></li>
+        <li><a href="/nosotros.html">Nosotros</a></li>
+        <li><a href="/servicios.html">Servicios</a></li>
+        <li><a href="/obras-sociales.html">Obras sociales</a></li>
+        <li><a href="/contacto.html">Turnos y contacto</a></li>
         <li>
           <a href="https://wa.me/541136622223"
              target="_blank" rel="noopener noreferrer"
@@ -803,12 +830,11 @@ p  { max-width: 65ch; text-wrap: pretty; }
     </div>
 
     <nav id="mobile-menu" class="mobile-menu" aria-label="Menú móvil">
-      <a href="#inicio"         onclick="closeMenu()">Inicio</a>
-      <a href="#nosotros"       onclick="closeMenu()">Nosotros</a>
-      <a href="#servicios"      onclick="closeMenu()">Servicios</a>
-      <a href="#obras-sociales" onclick="closeMenu()">Obras sociales</a>
-      <a href="#turnos"         onclick="closeMenu()">Turnos</a>
-      <a href="#contacto"       onclick="closeMenu()">Contacto</a>
+      <a href="/"                    onclick="closeMenu()" class="nav-active">Inicio</a>
+      <a href="/nosotros.html"       onclick="closeMenu()">Nosotros</a>
+      <a href="/servicios.html"      onclick="closeMenu()">Servicios</a>
+      <a href="/obras-sociales.html" onclick="closeMenu()">Obras sociales</a>
+      <a href="/contacto.html"       onclick="closeMenu()">Turnos y contacto</a>
       <a href="https://wa.me/541136622223"
          target="_blank" rel="noopener noreferrer"
          onclick="closeMenu()"
@@ -861,7 +887,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 <div class="stats-band" style="border-bottom: 1px solid var(--color-borde);" aria-label="Resumen del consultorio">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-value">+25</div>
+      <div class="stat-value">+20</div>
       <div class="stat-desc">años de trayectoria</div>
     </div>
     <div class="stat-item">
@@ -875,6 +901,32 @@ p  { max-width: 65ch; text-wrap: pretty; }
   </div>
 </div>
 
+<!-- FILOSOFÍA ──────────────────────────────────────── -->
+<section class="section" style="background: var(--color-fondo);">
+  <div class="container">
+    <div class="filosofia-intro">
+      <h2>Más que una consulta odontológica</h2>
+    </div>
+    <div class="filosofia-grid">
+      <div class="filosofia-card">
+        <div class="filosofia-emoji" aria-hidden="true">🧬</div>
+        <h3>Lo biológico</h3>
+        <p>Integramos tus síntomas, enfermedades previas y antecedentes familiares al tratamiento.</p>
+      </div>
+      <div class="filosofia-card">
+        <div class="filosofia-emoji" aria-hidden="true">💙</div>
+        <h3>Lo emocional</h3>
+        <p>Entendemos el miedo, la vergüenza y la necesidad de sentirte bien con tu sonrisa.</p>
+      </div>
+      <div class="filosofia-card">
+        <div class="filosofia-emoji" aria-hidden="true">🛡️</div>
+        <h3>Lo preventivo</h3>
+        <p>Te acompañamos a aprender cómo cuidar tu salud bucal y general a largo plazo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- POR QUÉ ELEGIRNOS ──────────────────────────── -->
 <section class="section" id="nosotros"
          style="background: var(--color-fondo-alt);"
@@ -882,7 +934,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
   <div class="container">
     <div class="pilares-intro">
       <h2 id="nosotros-heading">Por qué elegirnos</h2>
-      <p>Más de 25 años en Lomas de Zamora, construyendo nuestra historia con el mismo cuidado del primer día.</p>
+      <p>Más de 20 años en Lomas de Zamora, construyendo nuestra historia con el mismo cuidado del primer día.</p>
     </div>
     <div class="pilares-grid">
 
@@ -895,8 +947,8 @@ p  { max-width: 65ch; text-wrap: pretty; }
             <path d="M20 32.5 L23 35.5 L29 29"/>
           </svg>
         </div>
-        <h3>Más de 25 años de trayectoria</h3>
-        <p>Desde 1998 en Lomas de Zamora, nuestra trayectoria se mide en pacientes que regresan y nos recomiendan a su familia. La confianza se construye con el tiempo.</p>
+        <h3>Más de 20 años de trayectoria</h3>
+        <p>Desde 2005 en Lomas de Zamora, nuestra trayectoria se mide en pacientes que regresan y nos recomiendan a su familia. La confianza se construye con el tiempo.</p>
       </div>
 
       <div class="pilar">
@@ -1049,17 +1101,12 @@ p  { max-width: 65ch; text-wrap: pretty; }
       <p>Consúltenos si su cobertura está incluida. Estamos para ayudarle a aprovechar al máximo su plan de salud.</p>
     </div>
     <div class="obras-wrap" role="list" aria-label="Obras sociales aceptadas">
+      <span class="obra-chip" role="listitem">OSMECON</span>
       <span class="obra-chip" role="listitem">IOMA</span>
-      <span class="obra-chip" role="listitem">OSDE</span>
-      <span class="obra-chip" role="listitem">Swiss Medical</span>
-      <span class="obra-chip" role="listitem">PAMI</span>
-      <span class="obra-chip" role="listitem">Galeno</span>
-      <span class="obra-chip" role="listitem">Medicus</span>
-      <span class="obra-chip" role="listitem">Accord Salud</span>
-      <span class="obra-chip" role="listitem">OSECAC</span>
-      <span class="obra-chip" role="listitem">OSPAT</span>
-      <span class="obra-chip" role="listitem">Federada Salud</span>
+      <span class="obra-chip" role="listitem">Poder Judicial</span>
+      <span class="obra-chip" role="listitem">Sancor Salud</span>
     </div>
+    <p style="margin-top:1.25rem; font-size:1rem;">¿No encontrás la tuya? Consultanos — trabajamos con muchas más.</p>
   </div>
 </section>
 
@@ -1118,16 +1165,6 @@ p  { max-width: 65ch; text-wrap: pretty; }
             </div>
           </li>
           <li class="team-member">
-            <span class="team-member-name">Dra. Melanie Sánchez</span>
-            <span class="team-member-specialty">Odontología Clínica</span>
-            <div class="team-member-tags">
-              <span class="team-member-tag">Restauraciones</span>
-              <span class="team-member-tag">Extracciones</span>
-              <span class="team-member-tag">Limpieza dental</span>
-              <span class="team-member-tag">Blanqueamiento</span>
-            </div>
-          </li>
-          <li class="team-member">
             <span class="team-member-name">Dra. María Teresa Carnuccio</span>
             <span class="team-member-specialty">Cardiología</span>
             <div class="team-member-tags">
@@ -1152,7 +1189,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         </div>
         <div class="dra-info">
           <p class="dra-name">Dra. Adriana Inés Lobosco</p>
-          <p class="dra-mat">M.P. 23.505 · M.N. 26.732</p>
+          <p class="dra-mat">Mat. Nac. 26.732 · COPBA 23.732</p>
         </div>
       </div>
 
@@ -1227,7 +1264,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
       <div class="footer-brand">
         <p class="footer-brand-name">Consultorios San Juan</p>
         <p class="footer-dra">Dra. Adriana Inés Lobosco</p>
-        <p class="footer-mat">M.P. 23.505 · M.N. 26.732</p>
+        <p class="footer-mat">Mat. Nac. 26.732 · COPBA 23.732</p>
         <a class="footer-addr"
            href="https://www.google.com/maps/search/?api=1&query=Oslo+96%2C+Lomas+de+Zamora%2C+Buenos+Aires"
            target="_blank" rel="noopener noreferrer">

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turnos y contacto — Consultorios San Juan</title>
+<meta name="description" content="Sacar un turno en Consultorios San Juan es muy sencillo. WhatsApp, teléfono o Instagram. Oslo 96, Lomas de Zamora.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap">
+
+<style>
+:root {
+  --color-primario:  #1B2E6B;
+  --color-acento:    #2E6EB5;
+  --color-texto:     #1A1F2E;
+  --color-fondo:     #ffffff;
+  --color-fondo-alt: #F0F4FA;
+  --color-borde:     #E2E8F0;
+  --fuente-titulo:   'Poppins', sans-serif;
+  --fuente-cuerpo:   'Lato', sans-serif;
+  --radio-tarjeta:   12px;
+  --radio-boton:     8px;
+  --sombra-tarjeta:  0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--fuente-cuerpo); font-size: 19px; line-height: 1.75; color: var(--color-texto); background: var(--color-fondo); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a   { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--color-acento); outline-offset: 3px; border-radius: 4px; }
+
+h1, h2, h3, h4, h5 { font-family: var(--fuente-titulo); color: var(--color-primario); line-height: 1.2; text-wrap: balance; font-weight: 700; }
+h1 { font-size: clamp(1.9rem, 7vw, 3.2rem); }
+h2 { font-size: clamp(1.65rem, 5vw, 3rem); }
+h3 { font-size: clamp(1.15rem, 3.5vw, 1.55rem); font-weight: 600; }
+h4 { font-size: 1.1rem; font-weight: 700; }
+p  { max-width: 65ch; text-wrap: pretty; }
+
+.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
+@media (min-width: 580px) { .container { padding: 0 2rem; } }
+@media (min-width: 768px) { .container { padding: 0 3rem; } }
+
+.section { padding: 3rem 0; }
+@media (min-width: 580px) { .section { padding: 4rem 0; } }
+@media (min-width: 768px) { .section { padding: 5rem 0; } }
+
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--fuente-cuerpo); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; padding: 0.9rem 1.9rem; border-radius: var(--radio-boton); cursor: pointer; border: 2px solid transparent; transition: background 0.15s, color 0.15s, border-color 0.15s; line-height: 1; white-space: nowrap; }
+.btn:active { opacity: 0.88; }
+.btn-primary { background: var(--color-acento); color: #fff; border-color: var(--color-acento); }
+.btn-primary:hover { background: var(--color-primario); border-color: var(--color-primario); }
+.btn-secondary { background: transparent; color: var(--color-acento); border-color: var(--color-acento); }
+.btn-secondary:hover { background: var(--color-acento); color: #fff; }
+
+/* HEADER */
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--color-fondo); border-bottom: 1px solid var(--color-borde); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; gap: 1.5rem; }
+.nav-logo { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.logo-svg { width: 44px; height: 44px; flex-shrink: 0; }
+.logo-text-block { display: flex; flex-direction: column; gap: 1px; }
+.logo-name { font-family: var(--fuente-titulo); font-size: 1rem; font-weight: 700; color: var(--color-primario); white-space: nowrap; line-height: 1.2; }
+.logo-location { font-size: 0.78rem; color: var(--color-primario); line-height: 1.2; }
+.nav-links { display: none; list-style: none; align-items: center; gap: 0; }
+@media (min-width: 900px) { .nav-links { display: flex; } }
+.nav-links a { font-family: var(--fuente-cuerpo); font-size: 0.95rem; font-weight: 700; color: var(--color-primario); padding: 0.45rem 0.75rem; border-radius: var(--radio-boton); transition: color 0.15s; }
+.nav-links a:hover      { color: var(--color-acento); }
+.nav-links a.nav-active { color: var(--color-acento); }
+.nav-links .nav-cta { background: var(--color-acento); color: #fff; margin-left: 0.5rem; padding: 0.5rem 1.1rem; }
+.nav-links .nav-cta:hover { background: var(--color-primario); color: #fff; }
+.nav-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 0.4rem; background: none; border: none; }
+@media (min-width: 900px) { .nav-toggle { display: none; } }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--color-primario); border-radius: 2px; transition: transform 0.22s ease, opacity 0.22s ease; }
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-fondo); border-top: 1px solid var(--color-borde); box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 99; padding: 0.5rem 1.25rem 1.25rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 1.1rem; font-weight: 700; color: var(--color-primario); padding: 0.85rem 0; border-bottom: 1px solid var(--color-borde); transition: color 0.15s; }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover      { color: var(--color-acento); }
+.mobile-menu a.nav-active { color: var(--color-acento); }
+
+/* PAGE HERO */
+.page-hero { background: var(--color-primario); padding: 3.5rem 0; }
+.page-hero h1 { color: #fff; }
+.page-hero p  { color: #fff; font-size: 1.1rem; margin-top: 0.75rem; }
+
+/* TURNOS */
+.turnos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 580px) { .turnos-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.turno-card {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-tarjeta);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--color-fondo);
+}
+.turno-card.turno-destacado { border: 2px solid var(--color-acento); }
+.turno-card h3 { color: var(--color-primario); }
+.turno-num {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+.turno-card > p { font-size: 1rem; max-width: none; }
+.turno-card .btn { align-self: flex-start; margin-top: 0.5rem; }
+
+/* DATOS DE CONTACTO */
+.contacto-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .contacto-layout { grid-template-columns: 1fr 1fr; gap: 4rem; }
+}
+
+.datos-titulo { margin-bottom: 1.5rem; }
+.datos-lista { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+.datos-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+.datos-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-acento);
+  min-width: 80px;
+  padding-top: 0.2rem;
+}
+.datos-value { font-size: 1rem; }
+.datos-value a { color: var(--color-texto); border-bottom: 1px solid var(--color-borde); transition: border-color 0.15s; }
+.datos-value a:hover { border-color: var(--color-acento); color: var(--color-acento); }
+.horario-placeholder { font-style: italic; opacity: 0.5; }
+
+.mapa-wrap {
+  border-radius: var(--radio-tarjeta);
+  overflow: hidden;
+  border: 1px solid var(--color-borde);
+  line-height: 0;
+}
+.mapa-wrap iframe { width: 100%; height: 320px; border: 0; display: block; }
+@media (min-width: 768px) { .mapa-wrap iframe { height: 380px; } }
+
+/* FOOTER */
+.site-footer { background: var(--color-primario); color: #fff; padding: 4.5rem 0 2.5rem; }
+.footer-layout { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+@media (min-width: 580px) { .footer-layout { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (min-width: 768px) { .footer-layout { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; } }
+.footer-brand-name { font-family: var(--fuente-titulo); font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+.footer-dra  { font-size: 1rem; color: #fff; margin-bottom: 0.1rem; }
+.footer-mat  { font-size: 0.85rem; color: #fff; margin-bottom: 1.25rem; }
+.footer-addr { font-size: 0.95rem; color: #fff; display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.25rem; transition: opacity 0.15s; }
+.footer-addr:hover { opacity: 0.8; }
+.footer-credit { font-size: 0.75rem; color: #fff; margin-left: 0.25rem; }
+.footer-credit a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+.footer-col h5 { font-family: var(--fuente-titulo); font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.footer-col li { font-size: 0.95rem; }
+.footer-col a  { color: #fff; transition: opacity 0.15s; }
+.footer-col a:hover { opacity: 0.8; }
+.footer-todo { color: #fff; font-style: italic; opacity: 0.5; }
+.footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; color: #fff; display: flex; flex-direction: column; gap: 0.5rem; }
+@media (min-width: 580px) { .footer-bottom { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; } }
+.icon { display: inline-block; vertical-align: -3px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="nav-logo" aria-label="Consultorios San Juan — Inicio">
+        <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="15" y="2"  width="14" height="40" rx="3" fill="#1B2E6B"/>
+          <rect x="2"  y="15" width="40" height="14" rx="3" fill="#1B2E6B"/>
+          <text x="22" y="26.5" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="white">S</text>
+        </svg>
+        <div class="logo-text-block">
+          <span class="logo-name">Consultorios San Juan</span>
+          <span class="logo-location">Lomas de Zamora</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list" aria-label="Navegación principal">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/nosotros.html">Nosotros</a></li>
+        <li><a href="/servicios.html">Servicios</a></li>
+        <li><a href="/obras-sociales.html">Obras sociales</a></li>
+        <li><a href="/contacto.html" class="nav-active">Turnos y contacto</a></li>
+        <li><a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer" class="nav-cta">Solicite su turno</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Menú móvil">
+      <a href="/"                    onclick="closeMenu()">Inicio</a>
+      <a href="/nosotros.html"       onclick="closeMenu()">Nosotros</a>
+      <a href="/servicios.html"      onclick="closeMenu()">Servicios</a>
+      <a href="/obras-sociales.html" onclick="closeMenu()">Obras sociales</a>
+      <a href="/contacto.html"       onclick="closeMenu()" class="nav-active">Turnos y contacto</a>
+      <a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer" onclick="closeMenu()" style="color:var(--color-acento);font-weight:700;">Solicite su turno por WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Turnos y contacto</h1>
+    <p>Elegí la opción que te resulte más cómoda. Respondemos a la brevedad en horario de atención.</p>
+  </div>
+</div>
+
+<!-- TURNOS -->
+<section class="section" style="background: var(--color-fondo);">
+  <div class="container">
+    <div class="turnos-grid">
+
+      <div class="turno-card turno-destacado">
+        <h3>Por WhatsApp</h3>
+        <p class="turno-num">11&nbsp;3662-2223</p>
+        <p>Escribinos y coordinamos su turno de forma rápida y directa.</p>
+        <a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Escríbanos ahora</a>
+      </div>
+
+      <div class="turno-card">
+        <h3>Por teléfono</h3>
+        <p class="turno-num">4283-3005</p>
+        <p>Llamenos durante el horario de atención y le asignamos el turno que mejor le convenga.</p>
+        <a href="tel:0114283300" class="btn btn-secondary">Llamar al consultorio</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DATOS + MAPA -->
+<section class="section" style="background: var(--color-fondo-alt);">
+  <div class="container">
+    <div class="contacto-layout">
+
+      <div>
+        <h2 class="datos-titulo">Información de contacto</h2>
+        <ul class="datos-lista">
+          <li class="datos-item">
+            <span class="datos-label">Dirección</span>
+            <span class="datos-value">
+              <a href="https://www.google.com/maps/search/?api=1&query=Oslo+96%2C+Lomas+de+Zamora%2C+Buenos+Aires"
+                 target="_blank" rel="noopener noreferrer">
+                Oslo 96, Lomas de Zamora, Buenos Aires
+              </a>
+            </span>
+          </li>
+          <li class="datos-item">
+            <span class="datos-label">WhatsApp</span>
+            <span class="datos-value"><a href="https://wa.me/541136622223">11 3662-2223</a></span>
+          </li>
+          <li class="datos-item">
+            <span class="datos-label">Teléfono</span>
+            <span class="datos-value"><a href="tel:0114283300">4283-3005</a></span>
+          </li>
+          <li class="datos-item">
+            <span class="datos-label">Mail</span>
+            <span class="datos-value"><a href="mailto:consultoriossanjuan.01@gmail.com">consultoriossanjuan.01@gmail.com</a></span>
+          </li>
+          <li class="datos-item">
+            <span class="datos-label">Instagram</span>
+            <span class="datos-value"><a href="https://instagram.com/sanjuan.consultorios" target="_blank" rel="noopener noreferrer">@sanjuan.consultorios</a></span>
+          </li>
+          <li class="datos-item">
+            <span class="datos-label">Horarios</span>
+            <span class="datos-value horario-placeholder">COMPLETAR HORARIO</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mapa-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Oslo+96,+Lomas+de+Zamora,+Buenos+Aires,+Argentina&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de Consultorios San Juan — Oslo 96, Lomas de Zamora">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-brand">
+        <p class="footer-brand-name">Consultorios San Juan</p>
+        <p class="footer-dra">Dra. Adriana Inés Lobosco</p>
+        <p class="footer-mat">Mat. Nac. 26.732 · COPBA 23.732</p>
+        <a class="footer-addr" href="https://www.google.com/maps/search/?api=1&query=Oslo+96%2C+Lomas+de+Zamora%2C+Buenos+Aires" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 21s-8-7.5-8-12a8 8 0 0 1 16 0c0 4.5-8 12-8 12z"/>
+            <circle cx="12" cy="9" r="3"/>
+          </svg>
+          Oslo 96, Lomas de Zamora, Buenos Aires
+        </a>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="tel:0114283300">Tel: 4283-3005</a></li>
+          <li><a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer">WhatsApp: 11&nbsp;3662-2223</a></li>
+          <li><a href="https://instagram.com/sanjuan.consultorios" target="_blank" rel="noopener noreferrer">@sanjuan.consultorios</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Horarios</h5>
+        <ul>
+          <li class="footer-todo">COMPLETAR HORARIOS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Consultorios San Juan. Todos los derechos reservados.</span>
+      <span class="footer-credit">Diseño web: <a href="https://105.studio" target="_blank" rel="noopener noreferrer">105.studio</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  function toggleMenu(btn) {
+    var menu = document.getElementById('mobile-menu');
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.classList.toggle('open', open);
+  }
+  function closeMenu() {
+    var menu   = document.getElementById('mobile-menu');
+    var toggle = document.querySelector('.nav-toggle');
+    menu.classList.remove('open');
+    if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.classList.remove('open'); }
+  }
+  document.addEventListener('click', function (e) {
+    var menu   = document.getElementById('mobile-menu');
+    var toggle = document.querySelector('.nav-toggle');
+    if (!menu || !toggle) return;
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+  });
+  window.toggleMenu = toggleMenu;
+  window.closeMenu  = closeMenu;
+}());
+</script>
+</body>
+</html>
