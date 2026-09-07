@@ -122,33 +122,32 @@ p  { max-width: 65ch; text-wrap: pretty; }
   border: 1px solid var(--color-borde);
   border-radius: var(--radio-tarjeta);
   box-shadow: var(--sombra-tarjeta);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.2s;
-}
-.serv-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.11); }
-.serv-photo { width: 100%; height: 180px; object-fit: cover; display: block; background: #C8D9EE; }
-@media (min-width: 900px) { .serv-photo { height: 200px; } }
-.serv-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
-@media (min-width: 900px) { .serv-body { padding: 1.5rem; } }
-.serv-body h3 { font-size: 1.1rem; color: var(--color-primario); }
-.serv-body p  { font-size: 0.95rem; max-width: none; }
-
-.serv-card-text {
-  background: var(--color-fondo);
-  border: 1px solid var(--color-borde);
-  border-radius: var(--radio-tarjeta);
-  box-shadow: var(--sombra-tarjeta);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.35rem;
+  transition: box-shadow 0.2s;
 }
-.serv-card-text h3 { font-size: 1.1rem; }
-.serv-card-text p  { font-size: 0.95rem; max-width: none; }
+.serv-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.11); }
+.serv-icon { width: 44px; height: 44px; margin-bottom: 0.75rem; }
+.serv-icon svg {
+  width: 44px;
+  height: 44px;
+  stroke: var(--color-acento);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.serv-card h3 { font-size: 1.1rem; color: var(--color-primario); margin-bottom: 0.2rem; }
+.serv-card p  { font-size: 0.95rem; max-width: none; }
 
 .section-cta { margin-top: 3rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease-out, transform 0.55s ease-out; transition-delay: var(--ad, 0ms); }
+  .anim.visible { opacity: 1; transform: none; }
+}
 
 /* FOOTER */
 .site-footer { background: var(--color-primario); color: #fff; padding: 4.5rem 0 2.5rem; }
@@ -223,63 +222,105 @@ p  { max-width: 65ch; text-wrap: pretty; }
 <!-- SERVICIOS ODONTOLÓGICOS -->
 <section class="section" style="background: var(--color-fondo);">
   <div class="container">
-    <div class="bloque-titulo">
+    <div class="bloque-titulo anim">
       <h2>Servicios odontológicos</h2>
       <p>Atención completa para toda la familia, con profesionales especializados en cada área.</p>
     </div>
     <div class="serv-grid">
 
-      <div class="serv-card" id="odontologia">
-        <img class="serv-photo"
-             src="https://images.pexels.com/photos/3779696/pexels-photo-3779696.jpeg?auto=compress&w=800&q=90"
-             alt="Odontología clínica" loading="lazy">
-        <div class="serv-body">
-          <h3>Odontología clínica</h3>
-          <p>Consultas, diagnóstico y tratamientos generales para toda la familia. Restauraciones, extracciones y seguimiento continuo.</p>
+      <div class="serv-card anim" id="odontologia" style="--ad:0ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <path d="M17 6 C13 6 9 11 9 16 C9 22 11 27 14 33 L15 39 C15.5 41 17 41.5 18.5 39.5 L20 36 C21 34 23 34 24 36 L25.5 39.5 C27 41.5 28.5 41 29 39 L30 33 C33 27 35 22 35 16 C35 11 31 6 27 6 C25 6 23.5 7 22 7 C20.5 7 19 6 17 6 Z"/>
+          </svg>
         </div>
+        <h3>Odontología clínica</h3>
+        <p>Consultas, diagnóstico y tratamientos generales para toda la familia. Restauraciones, extracciones y seguimiento continuo.</p>
       </div>
 
-      <div class="serv-card" id="ortodoncia">
-        <img class="serv-photo"
-             src="https://images.pexels.com/photos/6529115/pexels-photo-6529115.jpeg?auto=compress&w=800&q=90"
-             alt="Ortodoncia y ortopedia" loading="lazy">
-        <div class="serv-body">
-          <h3>Ortodoncia y ortopedia de los maxilares</h3>
-          <p>Brackets metálicos y estéticos, alineadores invisibles y aparatos removibles para niños y adultos. A cargo de la Dra. Rodríguez.</p>
+      <div class="serv-card anim" id="ortodoncia" style="--ad:80ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <path d="M6 22 H38"/>
+            <path d="M8 16 H16 V28 H8 V16"/>
+            <path d="M18 16 H26 V28 H18 V16"/>
+            <path d="M28 16 H36 V28 H28 V16"/>
+          </svg>
         </div>
+        <h3>Ortodoncia y ortopedia de los maxilares</h3>
+        <p>Brackets metálicos y estéticos, alineadores invisibles y aparatos removibles para niños y adultos. A cargo de la Dra. Rodríguez.</p>
       </div>
 
-      <div class="serv-card" id="endodoncia">
-        <img class="serv-photo"
-             src="https://images.pexels.com/photos/3779703/pexels-photo-3779703.jpeg?auto=compress&w=800&q=90"
-             alt="Endodoncia" loading="lazy">
-        <div class="serv-body">
-          <h3>Endodoncia</h3>
-          <p>Tratamiento de conducto para salvar piezas dentales afectadas. A cargo de la Dra. Núñez, especialista en endodoncia.</p>
+      <div class="serv-card anim" id="endodoncia" style="--ad:160ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <path d="M17 6 C13 6 9 11 9 16 C9 22 11 27 14 33 L15 39 C15.5 41 17 41.5 18.5 39.5 L20 36 C21 34 23 34 24 36 L25.5 39.5 C27 41.5 28.5 41 29 39 L30 33 C33 27 35 22 35 16 C35 11 31 6 27 6 C25 6 23.5 7 22 7 C20.5 7 19 6 17 6 Z"/>
+            <path d="M22 12 V32"/>
+            <path d="M19 17 H25"/>
+          </svg>
         </div>
+        <h3>Endodoncia</h3>
+        <p>Tratamiento de conducto para salvar piezas dentales afectadas. A cargo de la Dra. Núñez, especialista en endodoncia.</p>
       </div>
 
-      <div class="serv-card-text" id="odontopediatria">
+      <div class="serv-card anim" id="odontopediatria" style="--ad:0ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <path d="M18 9 C15 9 12 13 12 17 C12 22 14 26 16 31 L17 36 C17.5 38 18.5 38.5 19.5 37 L21 34 C21.5 33 22.5 33 23 34 L24.5 37 C25.5 38.5 26.5 38 27 36 L28 31 C30 26 32 22 32 17 C32 13 29 9 26 9 C24.5 9 23.5 10 22 10 C20.5 10 19.5 9 18 9 Z"/>
+            <path d="M35 6 L36 9 L39 9 L36.5 11 L37.5 14 L35 12.5 L32.5 14 L33.5 11 L31 9 L34 9 Z"/>
+          </svg>
+        </div>
         <h3>Odontopediatría</h3>
         <p>Atención odontológica especializada en niños, con un enfoque acompañado y sin apuros. A cargo de la Dra. Szczuczko.</p>
       </div>
 
-      <div class="serv-card-text">
+      <div class="serv-card anim" style="--ad:80ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <path d="M8 18 C8 10 14 5 22 5 C30 5 36 10 36 18"/>
+            <path d="M8 26 C8 34 14 39 22 39 C30 39 36 34 36 26"/>
+            <path d="M11 22 L13 18 L15 22 L17 18 L19 22 L21 18 L23 22 L25 18 L27 22 L29 18 L31 22 L33 18"/>
+          </svg>
+        </div>
         <h3>Bruxismo y disfunción de ATM</h3>
         <p>Diagnóstico y tratamiento de trastornos de la articulación temporomandibular y del apretamiento dental.</p>
       </div>
 
-      <div class="serv-card-text">
+      <div class="serv-card anim" style="--ad:160ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <path d="M8 18 C8 8 36 8 36 18 L36 24 C36 33 30 38 22 38 C14 38 8 33 8 24 Z"/>
+            <path d="M14 18 V28"/>
+            <path d="M19 16 V30"/>
+            <path d="M25 16 V30"/>
+            <path d="M30 18 V28"/>
+          </svg>
+        </div>
         <h3>Prótesis removibles</h3>
         <p>Diseño y colocación de prótesis removibles a medida para recuperar la función y la estética dental.</p>
       </div>
 
-      <div class="serv-card-text">
+      <div class="serv-card anim" style="--ad:0ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <path d="M7 40 L7 24 L13 32 L22 14 L31 32 L37 24 L37 40 Z"/>
+            <path d="M5 40 H39"/>
+          </svg>
+        </div>
         <h3>Prótesis fijas, coronas y carillas</h3>
         <p>Coronas, incrustaciones y carillas de porcelana para restaurar piezas dañadas o mejorar la apariencia de su sonrisa.</p>
       </div>
 
-      <div class="serv-card-text" id="estetica">
+      <div class="serv-card anim" id="estetica" style="--ad:80ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <ellipse cx="22" cy="20" rx="11" ry="13"/>
+            <path d="M16 25 Q22 31 28 25"/>
+            <path d="M17 17 C17 15.5 19.5 15.5 19.5 17"/>
+            <path d="M24.5 17 C24.5 15.5 27 15.5 27 17"/>
+            <path d="M35 5 L36 8 L39 9 L36 10 L35 13 L34 10 L31 9 L34 8 Z"/>
+          </svg>
+        </div>
         <h3>Armonización orofacial</h3>
         <p>Procedimientos estéticos no invasivos para armonizar el rostro y la sonrisa. A cargo de la Dra. Lobosco.</p>
       </div>
@@ -291,18 +332,32 @@ p  { max-width: 65ch; text-wrap: pretty; }
 <!-- SERVICIOS MÉDICOS -->
 <section class="section" style="background: var(--color-fondo-alt);">
   <div class="container">
-    <div class="bloque-titulo">
+    <div class="bloque-titulo anim">
       <h2>Servicios médicos</h2>
       <p>Atención médica especializada en el mismo consultorio, coordinada con el equipo odontológico.</p>
     </div>
     <div class="serv-grid">
 
-      <div class="serv-card-text" style="background: var(--color-fondo);">
+      <div class="serv-card anim" style="--ad:0ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <circle cx="34" cy="33" r="5"/>
+            <path d="M34 28 C34 22 28 18 22 18 C16 18 12 22 12 26"/>
+            <path d="M11 6 C11 6 9 9 9 13 C9 17 11 19 15 19 C19 19 21 17 21 13"/>
+            <path d="M13 6 V13"/>
+          </svg>
+        </div>
         <h3>Medicina general</h3>
         <p>Consultas generales, controles clínicos y derivaciones a cargo de la Dra. Carnuccio.</p>
       </div>
 
-      <div class="serv-card-text" id="cardiologia" style="background: var(--color-fondo);">
+      <div class="serv-card anim" id="cardiologia" style="--ad:100ms">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44">
+            <path d="M22 36 C22 36 6 26 6 16 C6 11 10 7 15.5 7 C18.5 7 21 9.5 22 12 C23 9.5 25.5 7 28.5 7 C34 7 38 11 38 16 C38 26 22 36 22 36 Z"/>
+            <path d="M7 23 L11 23 L13 19 L16 28 L18 17 L21 23 L37 23"/>
+          </svg>
+        </div>
         <h3>Cardiología</h3>
         <p>Electrocardiogramas, seguimiento de riesgo cardiovascular y evaluaciones prequirúrgicas. A cargo de la Dra. Carnuccio, médica de planta del Hospital Juan A. Fernández.</p>
       </div>
@@ -376,6 +431,11 @@ p  { max-width: 65ch; text-wrap: pretty; }
   });
   window.toggleMenu = toggleMenu;
   window.closeMenu  = closeMenu;
+}());
+(function () {
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.anim').forEach(function(el){ el.classList.add('visible'); }); return; }
+  var obs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.12 });
+  document.querySelectorAll('.anim').forEach(function(el){ obs.observe(el); });
 }());
 </script>
 </body>

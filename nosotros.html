@@ -272,6 +272,49 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
 .section-cta { margin-top: 3rem; }
 
+/* HISTORIA */
+.historia-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .historia-layout { grid-template-columns: 1.3fr 1fr; gap: 4rem; }
+}
+.historia-texto h2 { margin-bottom: 1.25rem; }
+.historia-texto p + p { margin-top: 1rem; }
+.historia-hitos { display: flex; flex-direction: column; gap: 1.25rem; }
+.historia-hito {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--color-fondo);
+  border-radius: var(--radio-tarjeta);
+  border: 1px solid var(--color-borde);
+}
+.historia-anio {
+  font-family: var(--fuente-titulo);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-acento);
+  line-height: 1;
+  min-width: 3rem;
+}
+.historia-hito-texto {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  line-height: 1.35;
+}
+
+/* ANIMACIONES */
+@media (prefers-reduced-motion: no-preference) {
+  .anim { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease-out, transform 0.55s ease-out; transition-delay: var(--ad, 0ms); }
+  .anim.visible { opacity: 1; transform: none; }
+}
+
 /* FOOTER */
 .site-footer { background: var(--color-primario); color: #fff; padding: 4.5rem 0 2.5rem; }
 .footer-layout { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
@@ -356,15 +399,43 @@ p  { max-width: 65ch; text-wrap: pretty; }
   </div>
 </div>
 
+<!-- HISTORIA -->
+<section class="section" style="background: var(--color-fondo-alt);">
+  <div class="container">
+    <div class="historia-layout">
+      <div class="historia-texto anim">
+        <h2>Más de 20 años en Lomas de Zamora</h2>
+        <p>Consultorios San Juan abrió sus puertas en 2005 en Oslo 96, de la mano de la Dra. Adriana Lobosco. Lo que comenzó como una consulta de odontología general fue creciendo junto a los pacientes: primero sumamos la ortodoncia, luego la endodoncia, la odontopediatría y, más tarde, la cardiología.</p>
+        <p>Hoy somos un equipo de seis profesionales que trabajan de forma coordinada bajo el mismo techo. Cada especialidad se complementa con las demás. No derivamos a otro lado: lo resolvemos acá.</p>
+      </div>
+      <div class="historia-hitos anim" style="--ad:150ms">
+        <div class="historia-hito">
+          <span class="historia-anio">2005</span>
+          <span class="historia-hito-texto">Apertura en Oslo 96, Lomas de Zamora</span>
+        </div>
+        <div class="historia-hito">
+          <span class="historia-anio">20+</span>
+          <span class="historia-hito-texto">Años acompañando a familias de la zona</span>
+        </div>
+        <div class="historia-hito">
+          <span class="historia-anio">6</span>
+          <span class="historia-hito-texto">Profesionales especializados en un mismo espacio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
 <section class="section" style="background: var(--color-fondo);">
   <div class="container">
-    <div class="filosofia-nosotros">
-      <h2>Más que una consulta odontológica</h2>
-      <p>Atendemos a cada paciente como un todo. Eso significa entender su historia clínica, sus emociones y acompañarlo en el cuidado a largo plazo — no solo resolver el problema del día.</p>
+    <div class="filosofia-nosotros anim">
+      <h2>Nuestra filosofía</h2>
+      <p>Atendemos a cada paciente como un todo. Eso significa entender su historia clínica, sus emociones y acompañarlo en el cuidado a largo plazo, no solo resolver el problema del día.</p>
     </div>
     <div class="filosofia-pilares">
 
-      <div class="filosofia-pilar">
+      <div class="filosofia-pilar anim" style="--ad:0ms">
         <div class="filosofia-pilar-icon" aria-hidden="true">
           <!-- Lo biológico: célula / organismo -->
           <svg viewBox="0 0 44 44">
@@ -379,7 +450,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <p>Integramos los antecedentes clínicos, enfermedades previas y factores sistémicos al diagnóstico. La salud bucal forma parte de la salud general.</p>
       </div>
 
-      <div class="filosofia-pilar">
+      <div class="filosofia-pilar anim" style="--ad:120ms">
         <div class="filosofia-pilar-icon" aria-hidden="true">
           <!-- Lo emocional: corazón abierto -->
           <svg viewBox="0 0 44 44">
@@ -391,7 +462,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <p>Entendemos el miedo al dentista, la vergüenza y la angustia. Explicamos cada paso, trabajamos sin apuros y buscamos que el paciente se sienta en confianza.</p>
       </div>
 
-      <div class="filosofia-pilar">
+      <div class="filosofia-pilar anim" style="--ad:240ms">
         <div class="filosofia-pilar-icon" aria-hidden="true">
           <!-- Lo preventivo: escudo con línea -->
           <svg viewBox="0 0 44 44">
@@ -410,9 +481,14 @@ p  { max-width: 65ch; text-wrap: pretty; }
 <section class="section" style="background: var(--color-fondo-alt);">
   <div class="container">
 
+    <div class="equipo-intro anim">
+      <h2>El equipo</h2>
+      <p>Seis profesionales que trabajan de forma coordinada bajo el mismo techo. Cada especialidad se complementa con las otras para que el paciente no tenga que buscar soluciones en otro lado.</p>
+    </div>
+
     <div class="prof-grid">
 
-      <div class="prof-card">
+      <div class="prof-card anim" style="--ad:0ms">
         <div class="prof-card-head">
           <div class="prof-initials">AL</div>
           <div>
@@ -428,7 +504,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <span class="prof-mat">Mat. Nac. 26.732 / COPBA 23.732</span>
       </div>
 
-      <div class="prof-card">
+      <div class="prof-card anim" style="--ad:80ms">
         <div class="prof-card-head">
           <div class="prof-initials">MC</div>
           <div>
@@ -446,7 +522,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <span class="prof-mat">Mat. Nac. 80.473 / CPySMP 223.553</span>
       </div>
 
-      <div class="prof-card">
+      <div class="prof-card anim" style="--ad:160ms">
         <div class="prof-card-head">
           <div class="prof-initials">DR</div>
           <div>
@@ -460,7 +536,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <span class="prof-mat" style="opacity:0.5;">Matrícula a completar</span>
       </div>
 
-      <div class="prof-card">
+      <div class="prof-card anim" style="--ad:0ms">
         <div class="prof-card-head">
           <div class="prof-initials">CN</div>
           <div>
@@ -474,7 +550,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <span class="prof-mat" style="opacity:0.5;">Matrícula a completar</span>
       </div>
 
-      <div class="prof-card">
+      <div class="prof-card anim" style="--ad:80ms">
         <div class="prof-card-head">
           <div class="prof-initials">LS</div>
           <div>
@@ -489,7 +565,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <span class="prof-mat" style="opacity:0.5;">Matrícula a completar</span>
       </div>
 
-      <div class="prof-card">
+      <div class="prof-card anim" style="--ad:160ms">
         <div class="prof-card-head">
           <div class="prof-initials">PT</div>
           <div>
@@ -506,7 +582,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
     </div>
 
-    <div class="section-cta">
+    <div class="section-cta anim">
       <a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Pedí tu turno por WhatsApp</a>
     </div>
 
@@ -581,6 +657,22 @@ p  { max-width: 65ch; text-wrap: pretty; }
   });
   window.toggleMenu = toggleMenu;
   window.closeMenu  = closeMenu;
+}());
+
+(function () {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.anim').forEach(function (el) { el.classList.add('visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.anim').forEach(function (el) { observer.observe(el); });
 }());
 </script>
 </body>
