@@ -173,7 +173,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
   align-items: center;
   gap: 0;
 }
-@media (min-width: 900px) { .nav-links { display: flex; } }
+@media (min-width: 1024px) { .nav-links { display: flex; } }
 .nav-links a {
   font-family: var(--fuente-cuerpo);
   font-size: 0.95rem;
@@ -203,7 +203,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
   background: none;
   border: none;
 }
-@media (min-width: 900px) { .nav-toggle { display: none; } }
+@media (min-width: 1024px) { .nav-toggle { display: none; } }
 .nav-toggle span {
   display: block;
   width: 24px;
@@ -297,37 +297,6 @@ p  { max-width: 65ch; text-wrap: pretty; }
 }
 
 /* ═══════════════════════════════════════════════════
-   STATS
-   ═══════════════════════════════════════════════════ */
-.stats-band { background: var(--color-fondo); }
-.stats-inner {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-.stat-item {
-  flex: 1;
-  min-width: 0;
-  text-align: center;
-  padding: 1.25rem 0.5rem;
-  border-right: 1px solid var(--color-borde);
-}
-.stat-item:last-child { border-right: none; }
-@media (min-width: 580px) { .stat-item { padding: 2rem 1.5rem; } }
-.stat-value {
-  font-family: var(--fuente-titulo);
-  font-size: clamp(1.5rem, 5vw, 2.75rem);
-  font-weight: 700;
-  color: var(--color-primario);
-  line-height: 1;
-}
-.stat-desc {
-  font-size: clamp(0.72rem, 2vw, 0.95rem);
-  color: var(--color-texto);
-  margin-top: 0.35rem;
-}
-
-/* ═══════════════════════════════════════════════════
    POR QUÉ ELEGIRNOS
    ═══════════════════════════════════════════════════ */
 .pilares-intro    { max-width: 680px; margin-bottom: 3rem; }
@@ -413,21 +382,6 @@ p  { max-width: 65ch; text-wrap: pretty; }
 }
 @media (min-width: 580px) { .card-photo { height: 180px; } }
 @media (min-width: 900px) { .card-photo { height: 200px; } }
-.card-icon {
-  width: 40px;
-  height: 40px;
-  color: var(--color-acento);
-  margin-bottom: 0.5rem;
-}
-.card-icon svg {
-  width: 40px;
-  height: 40px;
-  stroke: var(--color-acento);
-  fill: none;
-  stroke-width: 1.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
 .card-body {
   padding: 0.875rem;
   display: flex;
@@ -439,78 +393,16 @@ p  { max-width: 65ch; text-wrap: pretty; }
 @media (min-width: 900px) { .card-body { padding: 1.75rem; gap: 0.45rem; } }
 .card h4 { color: var(--color-primario); }
 .card p  { font-size: 1rem; max-width: none; }
+a.card   { text-decoration: none; color: inherit; }
+a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 
-/* ═══════════════════════════════════════════════════
-   GALERÍA
-   ═══════════════════════════════════════════════════ */
-.galeria-titulo    { max-width: 680px; margin-bottom: 2.5rem; }
-.galeria-titulo h2 { margin-bottom: 0; }
-
-.galeria-grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 0.75rem;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 0.25rem;
-}
-.galeria-grid::-webkit-scrollbar { display: none; }
-@media (min-width: 580px) {
-  .galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    overflow-x: visible;
-    scroll-snap-type: none;
-  }
-}
-@media (min-width: 768px) {
-  .galeria-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 240px 240px;
-    gap: 1rem;
-  }
-  .galeria-item:nth-child(1) { grid-column: 1 / 3; }
-  .galeria-item:nth-child(2) { grid-column: 3 / 4; }
-  .galeria-item:nth-child(3) { grid-column: 1 / 2; }
-  .galeria-item:nth-child(4) { grid-column: 2 / 4; }
-}
-.galeria-item {
-  overflow: hidden;
-  border-radius: var(--radio-tarjeta);
-  background: #C8D9EE;
-  flex: 0 0 75vw;
-  height: 220px;
-  scroll-snap-align: start;
-}
-@media (min-width: 580px) {
-  .galeria-item { flex: none; height: auto; min-height: 200px; }
-}
-@media (min-width: 768px) { .galeria-item { min-height: unset; } }
-.galeria-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-.galeria-item:hover img { transform: scale(1.04); }
-
-/* ═══════════════════════════════════════════════════
-   OBRAS SOCIALES
-   ═══════════════════════════════════════════════════ */
-.obras-intro    { max-width: 680px; margin-bottom: 2.5rem; }
-.obras-intro h2 { margin-bottom: 1rem; }
-.obras-intro p  { font-size: 1.1rem; }
-
-.obras-wrap { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .obra-chip {
   font-family: var(--fuente-cuerpo);
-  font-size: 1rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--color-primario);
   border: 1.5px solid var(--color-borde);
-  padding: 0.6rem 1.3rem;
+  padding: 0.3rem 0.75rem;
   border-radius: var(--radio-boton);
   background: var(--color-fondo);
 }
@@ -717,22 +609,21 @@ p  { max-width: 65ch; text-wrap: pretty; }
 /* ═══════════════════════════════════════════════════
    OBRAS SOCIALES — BANDA DISCRETA
    ═══════════════════════════════════════════════════ */
-.obras-banda { padding: 1.75rem 0; }
+.obras-banda { padding: 1.75rem 0; border-top: 1px solid var(--color-borde); }
 .obras-banda-inner {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 @media (min-width: 768px) {
-  .obras-banda-inner { flex-direction: row; align-items: center; gap: 2rem; }
+  .obras-banda-inner { flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; }
 }
+.obras-banda-left { display: flex; flex-direction: column; gap: 0.5rem; }
 .obras-banda-label {
   font-family: var(--fuente-titulo);
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--color-primario);
-  white-space: nowrap;
-  max-width: none;
 }
 .obras-chips-row {
   display: flex;
@@ -744,53 +635,12 @@ p  { max-width: 65ch; text-wrap: pretty; }
   font-size: 0.88rem;
   font-weight: 700;
   color: var(--color-acento);
-  margin-left: 0.25rem;
   white-space: nowrap;
+  flex-shrink: 0;
   transition: opacity 0.15s;
 }
 .obras-ver-mas:hover { opacity: 0.75; }
 
-/* ═══════════════════════════════════════════════════
-   RESEÑAS GOOGLE
-   ═══════════════════════════════════════════════════ */
-.review-strip {
-  background: var(--color-fondo-alt);
-  padding: 2.75rem 0;
-}
-.review-strip-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: flex-start;
-}
-@media (min-width: 640px) {
-  .review-strip-inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-  }
-}
-.review-strip-text { display: flex; flex-direction: column; gap: 0.4rem; }
-.review-stars {
-  font-size: 1.35rem;
-  color: var(--color-acento);
-  letter-spacing: 0.12em;
-  line-height: 1;
-}
-.review-strip-title {
-  font-family: var(--fuente-titulo);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--color-primario);
-  line-height: 1.3;
-}
-.review-strip-text p {
-  font-size: 0.95rem;
-  color: var(--color-texto);
-  max-width: 48ch;
-  margin: 0;
-}
 </style>
 
 </head>
@@ -876,12 +726,9 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <a href="https://wa.me/541136622223"
            target="_blank" rel="noopener noreferrer"
            class="btn btn-primary">Solicite su turno</a>
-        <a href="tel:0114283300" class="btn btn-outline-white">Llamenos</a>
+        <a href="tel:01142833005" class="btn btn-outline-white">Llámenos</a>
       </div>
-      <p class="hero-horarios">
-        <!-- TODO: COMPLETAR HORARIOS DE ATENCIÓN -->
-        Lunes a viernes: 14 a 19 hs&ensp;·&ensp;Sábados: 9 a 12 hs
-      </p>
+      <p class="hero-horarios">Lunes a viernes: 14 a 19 hs&ensp;·&ensp;Sábados: 9 a 12 hs</p>
     </div>
   </div>
 
@@ -958,7 +805,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
     <div class="servicios-grid">
 
-      <div class="card">
+      <a class="card" href="/servicios.html#odontologia">
         <img class="card-photo"
              src="https://images.pexels.com/photos/3779696/pexels-photo-3779696.jpeg?auto=compress&w=800&q=90"
              alt="Odontología general" loading="lazy">
@@ -966,9 +813,9 @@ p  { max-width: 65ch; text-wrap: pretty; }
           <h4>Odontología general</h4>
           <p>Consultas, diagnóstico y tratamientos para toda la familia. Primera visita y seguimiento continuo.</p>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="/servicios.html#ortodoncia">
         <img class="card-photo"
              src="https://images.pexels.com/photos/6529115/pexels-photo-6529115.jpeg?auto=compress&w=800&q=90"
              alt="Ortodoncia" loading="lazy">
@@ -976,9 +823,9 @@ p  { max-width: 65ch; text-wrap: pretty; }
           <h4>Ortodoncia</h4>
           <p>Brackets y alineadores para corregir la posición dental en niños y adultos. A cargo de la Dra. Rodríguez.</p>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="/servicios.html#estetica">
         <img class="card-photo"
              src="https://images.pexels.com/photos/6627519/pexels-photo-6627519.jpeg?auto=compress&w=800&q=90"
              alt="Estética dental" loading="lazy">
@@ -986,9 +833,9 @@ p  { max-width: 65ch; text-wrap: pretty; }
           <h4>Estética dental</h4>
           <p>Blanqueamiento, carillas, armonización orofacial y restauraciones para una sonrisa que lo represente.</p>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="/servicios.html#endodoncia">
         <img class="card-photo"
              src="https://images.pexels.com/photos/3779703/pexels-photo-3779703.jpeg?auto=compress&w=800&q=90"
              alt="Endodoncia" loading="lazy">
@@ -996,9 +843,9 @@ p  { max-width: 65ch; text-wrap: pretty; }
           <h4>Endodoncia</h4>
           <p>Tratamiento de conductos para salvar piezas dentales afectadas. A cargo de la Dra. Núñez.</p>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="/servicios.html#odontopediatria">
         <img class="card-photo"
              src="https://images.pexels.com/photos/3845806/pexels-photo-3845806.jpeg?auto=compress&w=800&q=90"
              alt="Odontopediatría" loading="lazy">
@@ -1006,9 +853,9 @@ p  { max-width: 65ch; text-wrap: pretty; }
           <h4>Odontopediatría y ATM</h4>
           <p>Atención odontológica especializada en niños y diagnóstico de trastornos de la articulación temporomandibular.</p>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
+      <a class="card" href="/servicios.html#cardiologia">
         <img class="card-photo"
              src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&w=800&q=90"
              alt="Cardiología" loading="lazy">
@@ -1016,7 +863,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
           <h4>Cardiología</h4>
           <p>Consultas médicas con la Dra. Carnuccio, especialista en cardiología, en el mismo consultorio.</p>
         </div>
-      </div>
+      </a>
 
     </div>
     <div style="margin-top:3rem; display:flex; flex-wrap:wrap; gap:1rem; align-items:center;">
@@ -1100,13 +947,9 @@ p  { max-width: 65ch; text-wrap: pretty; }
           </li>
         </ul>
 
-        <div style="margin-bottom:1.75rem;">
+        <div>
           <a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer"
              class="btn btn-primary">Solicite su turno</a>
-        </div>
-        <div class="dra-info">
-          <p class="dra-name">Dra. Adriana Inés Lobosco</p>
-          <p class="dra-mat">Mat. Nac. 26.732 · COPBA 23.732</p>
         </div>
       </div>
 
@@ -1115,17 +958,19 @@ p  { max-width: 65ch; text-wrap: pretty; }
 </section>
 
 <!-- OBRAS SOCIALES ── discreta ─────────────────── -->
-<div id="obras-sociales" class="obras-banda" style="background: var(--color-fondo); border-top: 1px solid var(--color-borde);">
+<div id="obras-sociales" class="obras-banda" style="background: var(--color-fondo);">
   <div class="container">
     <div class="obras-banda-inner">
-      <p class="obras-banda-label">Obras sociales y prepagas</p>
-      <div class="obras-chips-row">
-        <span class="obra-chip" role="listitem">OSMECON</span>
-        <span class="obra-chip" role="listitem">IOMA</span>
-        <span class="obra-chip" role="listitem">Poder Judicial</span>
-        <span class="obra-chip" role="listitem">Sancor Salud</span>
-        <a href="/obras-sociales.html" class="obras-ver-mas">Ver todas las coberturas →</a>
+      <div class="obras-banda-left">
+        <p class="obras-banda-label">Obras sociales y prepagas</p>
+        <div class="obras-chips-row">
+          <span class="obra-chip" role="listitem">OSMECON</span>
+          <span class="obra-chip" role="listitem">IOMA</span>
+          <span class="obra-chip" role="listitem">Poder Judicial</span>
+          <span class="obra-chip" role="listitem">Sancor Salud</span>
+        </div>
       </div>
+      <a href="https://wa.me/541136622223?text=Hola%21%20Quiero%20consultar%20por%20las%20obras%20sociales%20con%20las%20que%20trabajan." target="_blank" rel="noopener noreferrer" class="obras-ver-mas">Consultar por otras coberturas</a>
     </div>
   </div>
 </div>
@@ -1153,11 +998,8 @@ p  { max-width: 65ch; text-wrap: pretty; }
       <div class="turno-card">
         <h3>Por teléfono</h3>
         <p class="turno-num">4283-3005</p>
-        <p>
-          Llámenos durante el horario de atención y le asignamos el turno que mejor le convenga.
-          <!-- TODO: AGREGAR HORARIO DE ATENCIÓN TELEFÓNICA -->
-        </p>
-        <a href="tel:0114283300" class="btn btn-secondary">Llamar al consultorio</a>
+        <p>Llámenos en horario de atención y le asignamos el turno que mejor le convenga.</p>
+        <a href="tel:01142833005" class="btn btn-secondary">Llamar al consultorio</a>
       </div>
 
     </div>
@@ -1188,7 +1030,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
       <div class="footer-col">
         <h5>Contacto</h5>
         <ul>
-          <li><a href="tel:0114283300">Tel: 4283-3005</a></li>
+          <li><a href="tel:01142833005">Tel: 4283-3005</a></li>
           <li>
             <a href="https://wa.me/541136622223"
                target="_blank" rel="noopener noreferrer">

@@ -61,14 +61,14 @@ p  { max-width: 65ch; text-wrap: pretty; }
 .logo-name { font-family: var(--fuente-titulo); font-size: 1rem; font-weight: 700; color: var(--color-primario); white-space: nowrap; line-height: 1.2; }
 .logo-location { font-size: 0.78rem; color: var(--color-primario); line-height: 1.2; }
 .nav-links { display: none; list-style: none; align-items: center; gap: 0; }
-@media (min-width: 900px) { .nav-links { display: flex; } }
+@media (min-width: 1024px) { .nav-links { display: flex; } }
 .nav-links a { font-family: var(--fuente-cuerpo); font-size: 0.95rem; font-weight: 700; color: var(--color-primario); padding: 0.45rem 0.75rem; border-radius: var(--radio-boton); transition: color 0.15s; }
 .nav-links a:hover      { color: var(--color-acento); }
 .nav-links a.nav-active { color: var(--color-acento); }
 .nav-links .nav-cta { background: var(--color-acento); color: #fff; margin-left: 0.5rem; padding: 0.5rem 1.1rem; }
 .nav-links .nav-cta:hover { background: var(--color-primario); color: #fff; }
 .nav-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 0.4rem; background: none; border: none; }
-@media (min-width: 900px) { .nav-toggle { display: none; } }
+@media (min-width: 1024px) { .nav-toggle { display: none; } }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--color-primario); border-radius: 2px; transition: transform 0.22s ease, opacity 0.22s ease; }
 .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
@@ -229,7 +229,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
     </div>
     <div class="serv-grid">
 
-      <div class="serv-card">
+      <div class="serv-card" id="odontologia">
         <img class="serv-photo"
              src="https://images.pexels.com/photos/3779696/pexels-photo-3779696.jpeg?auto=compress&w=800&q=90"
              alt="Odontología clínica" loading="lazy">
@@ -239,7 +239,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         </div>
       </div>
 
-      <div class="serv-card">
+      <div class="serv-card" id="ortodoncia">
         <img class="serv-photo"
              src="https://images.pexels.com/photos/6529115/pexels-photo-6529115.jpeg?auto=compress&w=800&q=90"
              alt="Ortodoncia y ortopedia" loading="lazy">
@@ -249,7 +249,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         </div>
       </div>
 
-      <div class="serv-card">
+      <div class="serv-card" id="endodoncia">
         <img class="serv-photo"
              src="https://images.pexels.com/photos/3779703/pexels-photo-3779703.jpeg?auto=compress&w=800&q=90"
              alt="Endodoncia" loading="lazy">
@@ -259,7 +259,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         </div>
       </div>
 
-      <div class="serv-card-text">
+      <div class="serv-card-text" id="odontopediatria">
         <h3>Odontopediatría</h3>
         <p>Atención odontológica especializada en niños, con un enfoque acompañado y sin apuros. A cargo de la Dra. Szczuczko.</p>
       </div>
@@ -279,7 +279,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <p>Coronas, incrustaciones y carillas de porcelana para restaurar piezas dañadas o mejorar la apariencia de su sonrisa.</p>
       </div>
 
-      <div class="serv-card-text">
+      <div class="serv-card-text" id="estetica">
         <h3>Armonización orofacial</h3>
         <p>Procedimientos estéticos no invasivos para armonizar el rostro y la sonrisa. A cargo de la Dra. Lobosco.</p>
       </div>
@@ -302,7 +302,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
         <p>Consultas generales, controles clínicos y derivaciones a cargo de la Dra. Carnuccio.</p>
       </div>
 
-      <div class="serv-card-text" style="background: var(--color-fondo);">
+      <div class="serv-card-text" id="cardiologia" style="background: var(--color-fondo);">
         <h3>Cardiología</h3>
         <p>Electrocardiogramas, seguimiento de riesgo cardiovascular y evaluaciones prequirúrgicas. A cargo de la Dra. Carnuccio, médica de planta del Hospital Juan A. Fernández.</p>
       </div>
@@ -333,7 +333,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
       <div class="footer-col">
         <h5>Contacto</h5>
         <ul>
-          <li><a href="tel:0114283300">Tel: 4283-3005</a></li>
+          <li><a href="tel:01142833005">Tel: 4283-3005</a></li>
           <li><a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer">WhatsApp: 11&nbsp;3662-2223</a></li>
           <li><a href="https://instagram.com/sanjuan.consultorios" target="_blank" rel="noopener noreferrer">@sanjuan.consultorios</a></li>
         </ul>
