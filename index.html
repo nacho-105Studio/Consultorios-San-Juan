@@ -371,11 +371,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  /* Extender hasta el borde de pantalla compensando el padding del container */
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-bottom: 0.25rem;
 }
 .servicios-grid::-webkit-scrollbar { display: none; }
 @media (min-width: 580px) {
@@ -384,8 +380,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
     grid-template-columns: repeat(2, 1fr);
     overflow-x: visible;
     scroll-snap-type: none;
-    margin-left: 0; margin-right: 0;
-    padding-left: 0; padding-right: 0;
+    padding-bottom: 0;
   }
 }
 @media (min-width: 900px) { .servicios-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
