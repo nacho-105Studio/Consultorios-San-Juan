@@ -161,11 +161,27 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
 /* PAGE HERO */
 .page-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
   background: var(--color-primario);
-  padding: 3.5rem 0;
+  padding: 4.5rem 0 3.5rem;
 }
+@media (min-width: 768px) { .page-hero { min-height: 400px; padding: 5.5rem 0 4rem; } }
+.page-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.2;
+}
+.page-hero-inner { position: relative; z-index: 1; }
 .page-hero h1 { color: #fff; }
-.page-hero p  { color: #fff; font-size: 1.1rem; margin-top: 0.75rem; }
+.page-hero-sub { color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-top: 0.75rem; max-width: 55ch; }
 
 /* EQUIPO PAGE */
 .equipo-intro { max-width: 680px; margin-bottom: 3rem; }
@@ -304,9 +320,12 @@ p  { max-width: 65ch; text-wrap: pretty; }
 </header>
 
 <div class="page-hero">
+  <img class="page-hero-img" src="https://images.pexels.com/photos/3952136/pexels-photo-3952136.jpeg?auto=compress&w=1600&q=90" alt="" aria-hidden="true" loading="eager">
   <div class="container">
-    <h1>Nuestro equipo</h1>
-    <p>Profesionales de odontología y medicina que trabajan de forma coordinada para acompañarle en cada etapa de su tratamiento.</p>
+    <div class="page-hero-inner">
+      <h1>Nuestro equipo</h1>
+      <p class="page-hero-sub">Profesionales de odontología y medicina que trabajan de forma coordinada para acompañarle en cada etapa de su tratamiento.</p>
+    </div>
   </div>
 </div>
 
