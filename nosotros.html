@@ -183,6 +183,35 @@ p  { max-width: 65ch; text-wrap: pretty; }
 .page-hero h1 { color: #fff; }
 .page-hero-sub { color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-top: 0.75rem; max-width: 55ch; }
 
+/* FILOSOFÍA */
+.filosofia-nosotros { max-width: 700px; margin-bottom: 3rem; }
+.filosofia-nosotros h2 { margin-bottom: 1rem; }
+.filosofia-nosotros p  { font-size: 1.1rem; }
+
+.filosofia-pilares {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 768px) { .filosofia-pilares { grid-template-columns: repeat(3, 1fr); } }
+
+.filosofia-pilar-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
+}
+.filosofia-pilar-icon svg {
+  width: 44px;
+  height: 44px;
+  stroke: var(--color-acento);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.filosofia-pilar h3 { margin-bottom: 0.6rem; font-size: 1.15rem; }
+.filosofia-pilar p  { font-size: 1rem; }
+
 /* EQUIPO PAGE */
 .equipo-intro { max-width: 680px; margin-bottom: 3rem; }
 .equipo-intro h2 { margin-bottom: 1rem; }
@@ -331,9 +360,51 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
 <section class="section" style="background: var(--color-fondo);">
   <div class="container">
-    <div class="equipo-intro">
-      <h2>Nuestra filosofía</h2>
-      <p>Somos un equipo de profesionales odontológico y médico con responsabilidad y compromiso. Priorizamos comprender al paciente como un todo: lo biológico, lo emocional y lo preventivo.</p>
+    <div class="filosofia-nosotros">
+      <h2>Más que una consulta odontológica</h2>
+      <p>Atendemos a cada paciente como un todo. Eso significa entender su historia clínica, sus emociones y acompañarlo en el cuidado a largo plazo — no solo resolver el problema del día.</p>
+    </div>
+    <div class="filosofia-pilares">
+
+      <div class="filosofia-pilar">
+        <div class="filosofia-pilar-icon" aria-hidden="true">
+          <!-- Lo biológico: célula / organismo -->
+          <svg viewBox="0 0 44 44">
+            <circle cx="22" cy="22" r="8"/>
+            <circle cx="22" cy="22" r="14" stroke-dasharray="4 4"/>
+            <circle cx="22" cy="10" r="2.5" fill="none"/>
+            <circle cx="33" cy="27" r="2.5" fill="none"/>
+            <circle cx="11" cy="27" r="2.5" fill="none"/>
+          </svg>
+        </div>
+        <h3>Lo biológico</h3>
+        <p>Integramos los antecedentes clínicos, enfermedades previas y factores sistémicos al diagnóstico. La salud bucal forma parte de la salud general.</p>
+      </div>
+
+      <div class="filosofia-pilar">
+        <div class="filosofia-pilar-icon" aria-hidden="true">
+          <!-- Lo emocional: corazón abierto -->
+          <svg viewBox="0 0 44 44">
+            <path d="M22 36 C22 36 6 25 6 15 C6 10 10 6 15 6 C18.5 6 21 8.5 22 11 C23 8.5 25.5 6 29 6 C34 6 38 10 38 15 C38 25 22 36 22 36Z"/>
+            <path d="M16 22 L20 26 L28 18" stroke="#fff" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <h3>Lo emocional</h3>
+        <p>Entendemos el miedo al dentista, la vergüenza y la angustia. Explicamos cada paso, trabajamos sin apuros y buscamos que el paciente se sienta en confianza.</p>
+      </div>
+
+      <div class="filosofia-pilar">
+        <div class="filosofia-pilar-icon" aria-hidden="true">
+          <!-- Lo preventivo: escudo con línea -->
+          <svg viewBox="0 0 44 44">
+            <path d="M22 4 L36 9 L36 22 C36 30 22 40 22 40 C22 40 8 30 8 22 L8 9 Z"/>
+            <path d="M15 22 L20 27 L29 17"/>
+          </svg>
+        </div>
+        <h3>Lo preventivo</h3>
+        <p>Acompañamos a cada paciente en el aprendizaje de hábitos que cuidan su salud bucal y general. El objetivo es que no necesite volver por urgencias.</p>
+      </div>
+
     </div>
   </div>
 </section>
