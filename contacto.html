@@ -138,7 +138,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
   font-family: var(--fuente-titulo);
   font-size: var(--fs-lead);
   font-weight: 700;
-  color: var(--color-primario);
+  color: var(--color-acento);
 }
 .turno-card > p:not(.turno-num) { font-size: var(--fs-small); max-width: none; }
 .turno-card .btn { align-self: flex-start; margin-top: 0.5rem; }
@@ -249,18 +249,18 @@ p  { max-width: 65ch; text-wrap: pretty; }
 </div>
 
 <!-- TURNOS -->
-<section class="section" style="background: var(--color-fondo);">
+<section class="section" style="background: var(--color-fondo-alt);">
   <div class="container">
     <div class="turnos-grid">
 
-      <div class="turno-card turno-destacado">
+      <div class="turno-card turno-destacado anim" style="--ad:0ms">
         <h3>Por WhatsApp</h3>
         <p class="turno-num">11&nbsp;3662-2223</p>
         <p>Escríbanos y coordinamos su turno de forma rápida y directa.</p>
         <a href="https://wa.me/541136622223" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Escríbanos ahora</a>
       </div>
 
-      <div class="turno-card">
+      <div class="turno-card anim" style="--ad:130ms">
         <h3>Dónde estamos</h3>
         <p class="turno-num">Oslo 96, Lomas de Zamora</p>
         <p>Lunes a viernes: 10 a 19 hs<br>Sábado: 8 a 12 hs</p>
