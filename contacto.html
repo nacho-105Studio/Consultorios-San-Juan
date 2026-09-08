@@ -23,20 +23,28 @@
   --radio-tarjeta:   12px;
   --radio-boton:     8px;
   --sombra-tarjeta:  0 2px 12px rgba(0, 0, 0, 0.07);
+  --fs-micro:   13px;
+  --fs-small:   16px;
+  --fs-base:    18px;
+  --fs-lead:    20px;
+  --fs-display: 28px;
+  --fs-h3: clamp(18px, 3.5vw, 25px);
+  --fs-h2: clamp(26px, 5vw, 48px);
+  --fs-h1: clamp(30px, 7vw, 51px);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--fuente-cuerpo); font-size: 18px; line-height: 1.75; color: var(--color-texto); background: var(--color-fondo); -webkit-font-smoothing: antialiased; }
+body { font-family: var(--fuente-cuerpo); font-size: var(--fs-base); line-height: 1.75; color: var(--color-texto); background: var(--color-fondo); -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a   { color: inherit; text-decoration: none; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--color-acento); outline-offset: 3px; border-radius: 4px; }
 
 h1, h2, h3, h4, h5 { font-family: var(--fuente-titulo); color: var(--color-primario); line-height: 1.2; text-wrap: balance; font-weight: 700; }
-h1 { font-size: clamp(1.9rem, 7vw, 3.2rem); }
-h2 { font-size: clamp(1.65rem, 5vw, 3rem); }
-h3 { font-size: clamp(1.15rem, 3.5vw, 1.55rem); font-weight: 600; }
-h4 { font-size: 1.1rem; font-weight: 700; }
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); font-weight: 600; }
+h4 { font-size: var(--fs-lead); font-weight: 700; }
 p  { max-width: 65ch; text-wrap: pretty; }
 
 .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
@@ -47,7 +55,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 @media (min-width: 580px) { .section { padding: 4rem 0; } }
 @media (min-width: 768px) { .section { padding: 5rem 0; } }
 
-.btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--fuente-cuerpo); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; padding: 0.9rem 1.9rem; border-radius: var(--radio-boton); cursor: pointer; border: 2px solid transparent; transition: background 0.15s, color 0.15s, border-color 0.15s; line-height: 1; white-space: nowrap; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--fuente-cuerpo); font-size: var(--fs-small); font-weight: 700; text-transform: uppercase; padding: 0.9rem 1.9rem; border-radius: var(--radio-boton); cursor: pointer; border: 2px solid transparent; transition: background 0.15s, color 0.15s, border-color 0.15s; line-height: 1; white-space: nowrap; }
 .btn:active { opacity: 0.88; }
 .btn-primary { background: var(--color-acento); color: #fff; border-color: var(--color-acento); }
 .btn-primary:hover { background: var(--color-primario); border-color: var(--color-primario); }
@@ -60,11 +68,11 @@ p  { max-width: 65ch; text-wrap: pretty; }
 .nav-logo { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
 .logo-svg { width: 44px; height: 44px; flex-shrink: 0; }
 .logo-text-block { display: flex; flex-direction: column; gap: 1px; }
-.logo-name { font-family: var(--fuente-titulo); font-size: 1rem; font-weight: 700; color: var(--color-primario); white-space: nowrap; line-height: 1.2; }
-.logo-location { font-size: 0.8rem; color: var(--color-primario); line-height: 1.2; }
+.logo-name { font-family: var(--fuente-titulo); font-size: var(--fs-small); font-weight: 700; color: var(--color-primario); white-space: nowrap; line-height: 1.2; }
+.logo-location { font-size: var(--fs-micro); color: var(--color-primario); line-height: 1.2; }
 .nav-links { display: none; list-style: none; align-items: center; gap: 0; }
 @media (min-width: 1024px) { .nav-links { display: flex; } }
-.nav-links a { font-family: var(--fuente-cuerpo); font-size: 0.875rem; font-weight: 700; color: var(--color-primario); padding: 0.45rem 0.75rem; border-radius: var(--radio-boton); transition: color 0.15s; }
+.nav-links a { font-family: var(--fuente-cuerpo); font-size: var(--fs-small); font-weight: 700; color: var(--color-primario); padding: 0.45rem 0.75rem; border-radius: var(--radio-boton); transition: color 0.15s; }
 .nav-links a:hover      { color: var(--color-acento); }
 .nav-links a.nav-active { color: var(--color-acento); }
 .nav-links .nav-cta { background: var(--color-acento); color: #fff; margin-left: 0.5rem; padding: 0.5rem 1.1rem; }
@@ -77,7 +85,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .mobile-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-fondo); border-top: 1px solid var(--color-borde); box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 99; padding: 0.5rem 1.25rem 1.25rem; }
 .mobile-menu.open { display: flex; }
-.mobile-menu a { font-size: 1.1rem; font-weight: 700; color: var(--color-primario); padding: 0.85rem 0; border-bottom: 1px solid var(--color-borde); transition: color 0.15s; }
+.mobile-menu a { font-size: var(--fs-lead); font-weight: 700; color: var(--color-primario); padding: 0.85rem 0; border-bottom: 1px solid var(--color-borde); transition: color 0.15s; }
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu a:hover      { color: var(--color-acento); }
 .mobile-menu a.nav-active { color: var(--color-acento); }
@@ -104,7 +112,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 }
 .page-hero-inner { position: relative; z-index: 1; }
 .page-hero h1 { color: #fff; }
-.page-hero-sub { color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-top: 0.75rem; max-width: 55ch; }
+.page-hero-sub { color: rgba(255,255,255,0.85); font-size: var(--fs-lead); margin-top: 0.75rem; max-width: 55ch; }
 
 /* TURNOS */
 .turnos-grid {
@@ -128,11 +136,11 @@ p  { max-width: 65ch; text-wrap: pretty; }
 .turno-card h3 { color: var(--color-primario); }
 .turno-num {
   font-family: var(--fuente-titulo);
-  font-size: 1.75rem;
+  font-size: var(--fs-display);
   font-weight: 700;
   color: var(--color-primario);
 }
-.turno-card > p { font-size: 1rem; max-width: none; }
+.turno-card > p { font-size: var(--fs-small); max-width: none; }
 .turno-card .btn { align-self: flex-start; margin-top: 0.5rem; }
 
 /* DATOS DE CONTACTO */
@@ -150,13 +158,13 @@ p  { max-width: 65ch; text-wrap: pretty; }
 .datos-lista { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
 .datos-item { display: flex; align-items: flex-start; gap: 0.75rem; }
 .datos-label {
-  font-size: 0.8rem;
+  font-size: var(--fs-micro);
   font-weight: 700;
   color: var(--color-acento);
   min-width: 80px;
   padding-top: 0.2rem;
 }
-.datos-value { font-size: 1rem; }
+.datos-value { font-size: var(--fs-small); }
 .datos-value a { color: var(--color-texto); border-bottom: 1px solid var(--color-borde); transition: border-color 0.15s; }
 .datos-value a:hover { border-color: var(--color-acento); color: var(--color-acento); }
 .horario-placeholder { font-style: italic; opacity: 0.5; }
@@ -175,20 +183,20 @@ p  { max-width: 65ch; text-wrap: pretty; }
 .footer-layout { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
 @media (min-width: 580px) { .footer-layout { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 @media (min-width: 768px) { .footer-layout { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; } }
-.footer-brand-name { font-family: var(--fuente-titulo); font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
-.footer-dra  { font-size: 1rem; color: #fff; margin-bottom: 0.1rem; }
-.footer-mat  { font-size: 0.875rem; color: #fff; margin-bottom: 1.25rem; }
-.footer-addr { font-size: 0.875rem; color: #fff; display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.25rem; transition: opacity 0.15s; }
+.footer-brand-name { font-family: var(--fuente-titulo); font-size: var(--fs-lead); font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+.footer-dra  { font-size: var(--fs-small); color: #fff; margin-bottom: 0.1rem; }
+.footer-mat  { font-size: var(--fs-small); color: #fff; margin-bottom: 1.25rem; }
+.footer-addr { font-size: var(--fs-small); color: #fff; display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.25rem; transition: opacity 0.15s; }
 .footer-addr:hover { opacity: 0.8; }
-.footer-credit { font-size: 0.8rem; color: #fff; margin-left: 0.25rem; }
+.footer-credit { font-size: var(--fs-micro); color: #fff; margin-left: 0.25rem; }
 .footer-credit a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
-.footer-col h5 { font-family: var(--fuente-titulo); font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+.footer-col h5 { font-family: var(--fuente-titulo); font-size: var(--fs-small); font-weight: 700; color: #fff; margin-bottom: 1rem; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-.footer-col li { font-size: 0.875rem; }
+.footer-col li { font-size: var(--fs-small); }
 .footer-col a  { color: #fff; transition: opacity 0.15s; }
 .footer-col a:hover { opacity: 0.8; }
 .footer-todo { color: #fff; font-style: italic; opacity: 0.5; }
-.footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.875rem; color: #fff; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: var(--fs-small); color: #fff; display: flex; flex-direction: column; gap: 0.5rem; }
 @media (min-width: 580px) { .footer-bottom { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; } }
 .icon { display: inline-block; vertical-align: -3px; flex-shrink: 0; }
 </style>
@@ -254,7 +262,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
       <div class="turno-card">
         <h3>Dónde estamos</h3>
-        <p class="turno-num" style="font-size:1.1rem;">Oslo 96, Lomas de Zamora</p>
+        <p class="turno-num" style="font-size:var(--fs-lead);">Oslo 96, Lomas de Zamora</p>
         <p>Lunes a viernes: 10 a 19 hs<br>Sábado: 8 a 12 hs</p>
         <a href="https://www.google.com/maps/search/?api=1&query=Oslo+96%2C+Lomas+de+Zamora%2C+Buenos+Aires"
            target="_blank" rel="noopener noreferrer"

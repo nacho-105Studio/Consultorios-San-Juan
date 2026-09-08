@@ -26,6 +26,14 @@
   --radio-tarjeta:   12px;
   --radio-boton:     8px;
   --sombra-tarjeta:  0 2px 12px rgba(0, 0, 0, 0.07);
+  --fs-micro:   13px;
+  --fs-small:   16px;
+  --fs-base:    18px;
+  --fs-lead:    20px;
+  --fs-display: 28px;
+  --fs-h3: clamp(18px, 3.5vw, 25px);
+  --fs-h2: clamp(26px, 5vw, 48px);
+  --fs-h1: clamp(30px, 7vw, 51px);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -35,7 +43,7 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--fuente-cuerpo);
-  font-size: 18px;
+  font-size: var(--fs-base);
   line-height: 1.75;
   color: var(--color-texto);
   background: var(--color-fondo);
@@ -60,10 +68,10 @@ h1, h2, h3, h4, h5 {
   text-wrap: balance;
   font-weight: 700;
 }
-h1 { font-size: clamp(1.9rem, 7vw, 3.2rem); }
-h2 { font-size: clamp(1.65rem, 5vw, 3rem); }
-h3 { font-size: clamp(1.15rem, 3.5vw, 1.55rem); font-weight: 600; }
-h4 { font-size: 1.1rem; font-weight: 700; }
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); font-weight: 600; }
+h4 { font-size: var(--fs-lead); font-weight: 700; }
 p  { max-width: 65ch; text-wrap: pretty; }
 
 .on-dark h1,
@@ -97,7 +105,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
   align-items: center;
   gap: 0.5rem;
   font-family: var(--fuente-cuerpo);
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.9rem 1.9rem;
@@ -159,13 +167,13 @@ p  { max-width: 65ch; text-wrap: pretty; }
 .logo-text-block { display: flex; flex-direction: column; gap: 1px; }
 .logo-name {
   font-family: var(--fuente-titulo);
-  font-size: 1rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   color: var(--color-primario);
   white-space: nowrap;
   line-height: 1.2;
 }
-.logo-location { font-size: 0.8rem; font-weight: 400; color: var(--color-primario); line-height: 1.2; }
+.logo-location { font-size: var(--fs-micro); font-weight: 400; color: var(--color-primario); line-height: 1.2; }
 
 .nav-links {
   display: none;
@@ -176,7 +184,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 @media (min-width: 1024px) { .nav-links { display: flex; } }
 .nav-links a {
   font-family: var(--fuente-cuerpo);
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   color: var(--color-primario);
   padding: 0.45rem 0.75rem;
@@ -231,7 +239,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   font-weight: 700;
   color: var(--color-primario);
   padding: 0.85rem 0;
@@ -277,10 +285,10 @@ p  { max-width: 65ch; text-wrap: pretty; }
   gap: 1.5rem;
 }
 .hero-left h1    { color: #fff; }
-.hero-sub        { font-size: 1.1rem; font-weight: 400; color: #fff; max-width: 48ch; }
-.hero-address    { font-size: 0.875rem; color: #fff; display: flex; align-items: center; gap: 0.4rem; }
+.hero-sub        { font-size: var(--fs-lead); font-weight: 400; color: #fff; max-width: 48ch; }
+.hero-address    { font-size: var(--fs-small); color: #fff; display: flex; align-items: center; gap: 0.4rem; }
 .hero-actions    { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
-.hero-horarios   { font-size: 0.875rem; color: #fff; max-width: none; line-height: 1.5; }
+.hero-horarios   { font-size: var(--fs-small); color: #fff; max-width: none; line-height: 1.5; }
 
 .hero-right {
   overflow: hidden;
@@ -301,7 +309,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
    ═══════════════════════════════════════════════════ */
 .pilares-intro    { max-width: 680px; margin-bottom: 3rem; }
 .pilares-intro h2 { margin-bottom: 1rem; }
-.pilares-intro p  { font-size: 1.1rem; }
+.pilares-intro p  { font-size: var(--fs-lead); }
 
 .pilares-grid {
   display: grid;
@@ -326,14 +334,14 @@ p  { max-width: 65ch; text-wrap: pretty; }
   stroke-linejoin: round;
 }
 .pilar h3 { margin-bottom: 0.75rem; }
-.pilar p  { font-size: 1rem; }
+.pilar p  { font-size: var(--fs-small); }
 
 /* ═══════════════════════════════════════════════════
    SERVICIOS
    ═══════════════════════════════════════════════════ */
 .servicios-intro    { max-width: 680px; margin-bottom: 2.5rem; }
 .servicios-intro h2 { margin-bottom: 1rem; }
-.servicios-intro p  { font-size: 1.1rem; }
+.servicios-intro p  { font-size: var(--fs-lead); }
 
 .servicios-grid {
   display: flex;
@@ -392,13 +400,13 @@ p  { max-width: 65ch; text-wrap: pretty; }
 @media (min-width: 580px) { .card-body { padding: 1.25rem; } }
 @media (min-width: 900px) { .card-body { padding: 1.75rem; gap: 0.45rem; } }
 .card h4 { color: var(--color-primario); }
-.card p  { font-size: 1rem; max-width: none; }
+.card p  { font-size: var(--fs-small); max-width: none; }
 a.card   { text-decoration: none; color: inherit; }
 a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 
 .obra-chip {
   font-family: var(--fuente-cuerpo);
-  font-size: 0.8rem;
+  font-size: var(--fs-micro);
   font-weight: 700;
   color: var(--color-primario);
   border: 1.5px solid var(--color-borde);
@@ -438,7 +446,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 }
 
 .equipo-content h2   { margin-bottom: 0.75rem; }
-.equipo-intro-text   { font-size: 1.1rem; margin-bottom: 2rem; }
+.equipo-intro-text   { font-size: var(--fs-lead); margin-bottom: 2rem; }
 
 .team-list {
   list-style: none;
@@ -456,12 +464,12 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 .team-member:first-child { border-top: 1px solid var(--color-borde); }
 .team-member-name {
   font-family: var(--fuente-titulo);
-  font-size: 1rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   color: var(--color-primario);
 }
 .team-member-specialty {
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: var(--color-acento);
   margin-top: 0.1rem;
@@ -473,7 +481,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
   margin-top: 0.5rem;
 }
 .team-member-tag {
-  font-size: 0.8rem;
+  font-size: var(--fs-micro);
   color: var(--color-texto);
   background: var(--color-fondo);
   border: 1px solid var(--color-borde);
@@ -484,19 +492,19 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 .dra-info   { padding-top: 1.75rem; }
 .dra-name {
   font-family: var(--fuente-titulo);
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   font-weight: 700;
   color: var(--color-primario);
   margin-bottom: 0.2rem;
 }
-.dra-mat { font-size: 0.875rem; color: var(--color-texto); }
+.dra-mat { font-size: var(--fs-small); color: var(--color-texto); }
 
 /* ═══════════════════════════════════════════════════
    TURNOS
    ═══════════════════════════════════════════════════ */
 .turnos-intro    { max-width: 680px; margin-bottom: 2.5rem; }
 .turnos-intro h2 { margin-bottom: 1rem; }
-.turnos-intro p  { font-size: 1.1rem; }
+.turnos-intro p  { font-size: var(--fs-lead); }
 
 .turnos-grid {
   display: grid;
@@ -519,11 +527,11 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 .turno-card h3  { color: var(--color-primario); }
 .turno-num {
   font-family: var(--fuente-titulo);
-  font-size: 1.75rem;
+  font-size: var(--fs-display);
   font-weight: 700;
   color: var(--color-primario);
 }
-.turno-card > p { font-size: 1rem; max-width: none; }
+.turno-card > p { font-size: var(--fs-small); max-width: none; }
 .turno-card .btn { align-self: flex-start; margin-top: 0.5rem; }
 
 /* ═══════════════════════════════════════════════════
@@ -547,15 +555,15 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 }
 .footer-brand-name {
   font-family: var(--fuente-titulo);
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   font-weight: 700;
   color: #fff;
   margin-bottom: 0.3rem;
 }
-.footer-dra  { font-size: 1rem; color: #fff; margin-bottom: 0.1rem; }
-.footer-mat  { font-size: 0.875rem; color: #fff; margin-bottom: 1.25rem; }
+.footer-dra  { font-size: var(--fs-small); color: #fff; margin-bottom: 0.1rem; }
+.footer-mat  { font-size: var(--fs-small); color: #fff; margin-bottom: 1.25rem; }
 .footer-addr {
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
   color: #fff;
   display: inline-flex;
   align-items: center;
@@ -566,7 +574,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 .footer-addr:hover { opacity: 0.8; }
 .footer-credit {
   font-family: var(--fuente-cuerpo);
-  font-size: 0.8rem;
+  font-size: var(--fs-micro);
   font-weight: 400;
   color: #fff;
   margin-left: 0.25rem;
@@ -574,13 +582,13 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 .footer-credit a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
 .footer-col h5 {
   font-family: var(--fuente-titulo);
-  font-size: 1rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   color: #fff;
   margin-bottom: 1rem;
 }
 .footer-col ul  { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-.footer-col li  { font-size: 0.875rem; }
+.footer-col li  { font-size: var(--fs-small); }
 .footer-col a   { color: #fff; transition: opacity 0.15s; }
 .footer-col a:hover { opacity: 0.8; }
 .footer-todo    { color: #fff; font-style: italic; opacity: 0.5; }
@@ -588,7 +596,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255,255,255,0.15);
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -621,7 +629,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 .obras-banda-left { display: flex; flex-direction: column; gap: 0.5rem; }
 .obras-banda-label {
   font-family: var(--fuente-titulo);
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   color: var(--color-primario);
 }
@@ -632,7 +640,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
   align-items: center;
 }
 .obras-ver-mas {
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   color: var(--color-acento);
   white-space: nowrap;
@@ -1022,7 +1030,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 
       <div class="turno-card anim" style="--ad:130ms">
         <h3>Dónde estamos</h3>
-        <p class="turno-num" style="font-size:1.1rem;">Oslo 96, Lomas de Zamora</p>
+        <p class="turno-num" style="font-size:var(--fs-lead);">Oslo 96, Lomas de Zamora</p>
         <p>Lunes a viernes: 10 a 19 hs<br>Sábado: 8 a 12 hs</p>
         <a href="https://www.google.com/maps/search/?api=1&query=Oslo+96%2C+Lomas+de+Zamora%2C+Buenos+Aires"
            target="_blank" rel="noopener noreferrer"
