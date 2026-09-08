@@ -1085,7 +1085,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
     </div>
 
     <div class="footer-bottom">
-      <span>© 2026 Consultorios San Juan. Todos los derechos reservados.</span>
+      <span>© <span id="footer-year"></span> Consultorios San Juan. Todos los derechos reservados.</span>
       <span class="footer-credit">Diseño web: <a href="https://105.studio" target="_blank" rel="noopener noreferrer">105.studio</a></span>
     </div>
   </div>
@@ -1117,6 +1117,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
   });
   window.toggleMenu = toggleMenu;
   window.closeMenu  = closeMenu;
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
 }());
 
 (function () {

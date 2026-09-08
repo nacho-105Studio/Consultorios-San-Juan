@@ -349,7 +349,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Consultorios San Juan. Todos los derechos reservados.</span>
+      <span>© <span id="footer-year"></span> Consultorios San Juan. Todos los derechos reservados.</span>
       <span class="footer-credit">Diseño web: <a href="https://105.studio" target="_blank" rel="noopener noreferrer">105.studio</a></span>
     </div>
   </div>
@@ -378,6 +378,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
   });
   window.toggleMenu = toggleMenu;
   window.closeMenu  = closeMenu;
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
 }());
 </script>
 </body>
