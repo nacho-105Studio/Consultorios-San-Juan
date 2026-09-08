@@ -29,7 +29,7 @@
   --fs-micro:   13px;
   --fs-small:   16px;
   --fs-base:    18px;
-  --fs-lead:    20px;
+  --fs-lead:    19px;
   --fs-display: 28px;
   --fs-h3: clamp(17px, 2.5vw, 22px);
   --fs-h2: clamp(24px, 3.5vw, 40px);
@@ -527,9 +527,9 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 .turno-card h3  { color: var(--color-primario); }
 .turno-num {
   font-family: var(--fuente-titulo);
-  font-size: var(--fs-display);
+  font-size: var(--fs-lead);
   font-weight: 700;
-  color: var(--color-primario);
+  color: var(--color-acento);
 }
 .turno-card > p:not(.turno-num) { font-size: var(--fs-small); max-width: none; }
 .turno-card .btn { align-self: flex-start; margin-top: 0.5rem; }
@@ -629,7 +629,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 .obras-banda-left { display: flex; flex-direction: column; gap: 0.5rem; }
 .obras-banda-label {
   font-family: var(--fuente-titulo);
-  font-size: var(--fs-small);
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--color-primario);
 }
@@ -643,11 +643,14 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
   font-size: var(--fs-small);
   font-weight: 700;
   color: var(--color-acento);
+  border: 1.5px solid var(--color-acento);
+  border-radius: var(--radio-boton);
+  padding: 0.4rem 0.9rem;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: opacity 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
-.obras-ver-mas:hover { opacity: 0.75; }
+.obras-ver-mas:hover { background: var(--color-acento); color: #fff; }
 
 /* ═══════════════════════════════════════════════════
    ANIMACIONES DE ENTRADA
@@ -1022,7 +1025,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
       <div class="turno-card turno-destacado anim" style="--ad:0ms">
         <h3>Por WhatsApp</h3>
         <p class="turno-num">11&nbsp;3662-2223</p>
-        <p>Escríbanos y coordinamos su turno de forma rápida y directa. También podemos hablar fuera del horario habitual.</p>
+        <p>Escríbanos y coordinamos su turno de forma rápida y directa.</p>
         <a href="https://wa.me/541136622223"
            target="_blank" rel="noopener noreferrer"
            class="btn btn-primary">Escríbanos ahora</a>
@@ -1030,7 +1033,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 
       <div class="turno-card anim" style="--ad:130ms">
         <h3>Dónde estamos</h3>
-        <p class="turno-num" style="font-size:var(--fs-lead);">Oslo 96, Lomas de Zamora</p>
+        <p style="font-weight:700; color:var(--color-primario);">Oslo 96, Lomas de Zamora</p>
         <p>Lunes a viernes: 10 a 19 hs<br>Sábado: 8 a 12 hs</p>
         <a href="https://www.google.com/maps/search/?api=1&query=Oslo+96%2C+Lomas+de+Zamora%2C+Buenos+Aires"
            target="_blank" rel="noopener noreferrer"
