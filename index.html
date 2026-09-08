@@ -31,8 +31,8 @@
   --fs-base:    18px;
   --fs-lead:    20px;
   --fs-display: 28px;
-  --fs-h3: clamp(18px, 3.5vw, 25px);
-  --fs-h2: clamp(26px, 5vw, 48px);
+  --fs-h3: clamp(17px, 2.5vw, 22px);
+  --fs-h2: clamp(24px, 3.5vw, 40px);
   --fs-h1: clamp(30px, 7vw, 51px);
 }
 
@@ -531,7 +531,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
   font-weight: 700;
   color: var(--color-primario);
 }
-.turno-card > p { font-size: var(--fs-small); max-width: none; }
+.turno-card > p:not(.turno-num) { font-size: var(--fs-small); max-width: none; }
 .turno-card .btn { align-self: flex-start; margin-top: 0.5rem; }
 
 /* ═══════════════════════════════════════════════════
