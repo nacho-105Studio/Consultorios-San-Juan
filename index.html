@@ -401,13 +401,11 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
 .card-photo {
   width: 100%;
-  height: 160px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   background: #C8D9EE;
 }
-@media (min-width: 580px) { .card-photo { height: 180px; } }
-@media (min-width: 900px) { .card-photo { height: 200px; } }
 .card-body {
   padding: 0.875rem;
   display: flex;
@@ -859,7 +857,7 @@ a.card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13); }
 
       <a class="card anim" style="--ad:0ms" href="/servicios.html#odontologia">
         <img class="card-photo"
-             src="https://images.pexels.com/photos/3779696/pexels-photo-3779696.jpeg?auto=compress&w=800&q=90"
+             src="img/odontologia-general.webp"
              alt="Odontología general" loading="lazy">
         <div class="card-body">
           <h4>Odontología general</h4>
