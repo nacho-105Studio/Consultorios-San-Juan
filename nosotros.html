@@ -250,15 +250,14 @@ p  { max-width: 65ch; text-wrap: pretty; }
   gap: 1rem;
 }
 .prof-card-head { display: flex; align-items: center; gap: 0.85rem; }
-.prof-initials {
-  width: 48px; height: 48px; flex-shrink: 0;
+.prof-photo {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
   border-radius: 50%;
-  background: var(--color-primario);
-  color: #fff;
-  font-family: var(--fuente-titulo);
-  font-size: var(--fs-small);
-  font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--color-borde);
 }
 .prof-name { font-size: var(--fs-lead); font-weight: 700; color: var(--color-primario); font-family: var(--fuente-titulo); line-height: 1.25; }
 .prof-role { font-size: var(--fs-small); font-weight: 600; color: var(--color-acento); margin-top: 4px; }
@@ -504,7 +503,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
       <div class="prof-card anim" style="--ad:0ms">
         <div class="prof-card-head">
-          <div class="prof-initials">AL</div>
+          <img class="prof-photo" src="img/equipo/adriana.webp" alt="Dra. Adriana Lobosco" loading="lazy">
           <div>
             <p class="prof-name">Dra. Adriana Lobosco</p>
             <p class="prof-role">Coordinación del equipo</p>
@@ -520,7 +519,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
       <div class="prof-card anim" style="--ad:80ms">
         <div class="prof-card-head">
-          <div class="prof-initials">MC</div>
+          <img class="prof-photo" src="img/equipo/teresa.webp" alt="Dra. María Teresa Carnuccio" loading="lazy">
           <div>
             <p class="prof-name">Dra. María Teresa Carnuccio</p>
             <p class="prof-role">Cardiología</p>
@@ -538,7 +537,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
       <div class="prof-card anim" style="--ad:160ms">
         <div class="prof-card-head">
-          <div class="prof-initials">DR</div>
+          <img class="prof-photo" src="img/equipo/dina.webp" alt="Dra. Dina Rodríguez" loading="lazy">
           <div>
             <p class="prof-name">Dra. Dina Rodríguez</p>
             <p class="prof-role">Ortodoncia y Ortopedia</p>
@@ -552,7 +551,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
       <div class="prof-card anim" style="--ad:0ms">
         <div class="prof-card-head">
-          <div class="prof-initials">CN</div>
+          <img class="prof-photo" src="img/equipo/carolina.webp" alt="Dra. Carolina Núñez" loading="lazy">
           <div>
             <p class="prof-name">Dra. Carolina Núñez</p>
             <p class="prof-role">Endodoncia</p>
@@ -566,7 +565,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
       <div class="prof-card anim" style="--ad:80ms">
         <div class="prof-card-head">
-          <div class="prof-initials">LS</div>
+          <img class="prof-photo" src="img/equipo/laura.webp" alt="Dra. Laura Szczuczko" loading="lazy">
           <div>
             <p class="prof-name">Dra. Laura Szczuczko</p>
             <p class="prof-role">Odontopediatría</p>
@@ -581,7 +580,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
       <div class="prof-card anim" style="--ad:160ms">
         <div class="prof-card-head">
-          <div class="prof-initials">PT</div>
+          <img class="prof-photo" src="img/equipo/paola.webp" alt="Aux. Paola Teles" loading="lazy">
           <div>
             <p class="prof-name">Aux. Paola Teles</p>
             <p class="prof-role">Auxiliar de Odontología</p>
@@ -596,7 +595,7 @@ p  { max-width: 65ch; text-wrap: pretty; }
 
       <div class="prof-card anim" style="--ad:0ms">
         <div class="prof-card-head">
-          <div class="prof-initials">GC</div>
+          <img class="prof-photo" src="img/equipo/gisela.webp" alt="Lic. Gisela Cardozo" loading="lazy">
           <div>
             <p class="prof-name">Lic. Gisela Cardozo</p>
             <p class="prof-role">Nutrición</p>
